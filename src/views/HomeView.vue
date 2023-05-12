@@ -5,7 +5,7 @@ import Nav from "@/components/nav.vue";
 import Slider from "@/components/slider.vue";
 import Catalog from "@/components/catalog.vue";
 import Footer from "@/components/footer.vue";
-import axios from "axios";
+import { reactive } from "vue";
 
 export default {
   name: "HomeView",

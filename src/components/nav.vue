@@ -92,7 +92,7 @@ a {
 }
 
 .navbar__logo {
-  width: 50vw;
+  width: 300px;
   justify-content: center;
   display: flex;
 }
@@ -111,10 +111,20 @@ a {
 
 @media screen and (max-width: 426px) {
   .navbar__logo {
-    width: 75vw;
+    width: 100%;
+    object-fit: contain;
+  }
+  .navbar__a {
+    justify-content: center;
+    display: flex;
+    width: 50%;
   }
   .header__list {
     background: rgba(255, 255, 255, 0.2);
+  }
+  .icon.nav__toggler {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -136,6 +146,7 @@ a {
   }
   .navbar {
     align-items: center;
+    height: 80px;
   }
   .nav__item {
     display: inline-block;
