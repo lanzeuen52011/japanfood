@@ -1,16 +1,12 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-import Nav from "@/components/nav.vue";
-import Footer from "@/components/footer.vue";
-import { reactive } from "vue";
+import Slider from "@/components/slider.vue";
 
 export default {
-  name: "HomeView",
   components: {
     // HelloWorld
-    Nav,
-    Footer,
+    Slider,
   },
   setup() {
     return {};
@@ -23,7 +19,5 @@ export default {
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <!-- </div> -->
-  <Nav />
-  <router-view />
-  <Footer />
+  <Slider />
 </template>

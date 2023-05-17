@@ -16,9 +16,10 @@ export default {
   <header>
     <h1>Let Him Cook</h1>
     <nav class="navbar">
-      <a class="navbar__a" href="#">
-        <img class="logo navbar__logo" src="@/image/LetHimCook1.png" alt="" />
-      </a>
+      <router-link class="navbar__a" to="/"
+        ><img class="logo navbar__logo" src="@/image/LetHimCook1.png" alt=""
+      /></router-link>
+
       <div
         :class="[
           'collapsible',
@@ -31,23 +32,16 @@ export default {
         </svg>
         <ul :class="['list', 'collapsible__content', 'header__list']">
           <li class="nav__item">
-            <div class="list__items">
-              <a href="javasript:;">食譜分類</a>
-            </div>
+            <router-link class="list__items" to="/about">關於我們</router-link>
           </li>
           <li class="nav__item">
-            <div class="list__items">
-              <a href="javasript:;">日食文化</a>
-            </div>
+            <router-link class="list__items" to="/menu">私房菜單</router-link>
           </li>
           <li class="nav__item">
-            <div class="list__items"><a href="javasript:;">活動參予</a></div>
+            <router-link class="list__items" to="/member">會員</router-link>
           </li>
           <li class="nav__item">
-            <div class="list__items"><a href="javasript:;">推薦廚具</a></div>
-          </li>
-          <li class="nav__item">
-            <div class="list__items"><a href="javasript:;">關於我們</a></div>
+            <router-link class="list__items" to="/cart">購物車</router-link>
           </li>
         </ul>
       </div>
@@ -179,7 +173,8 @@ a {
     width: 100%;
   }
   .nav__item .list__items {
-    margin: 1rem;
+    display: block;
+    padding: 2rem;
   }
   .navbar__list {
     position: unset;
