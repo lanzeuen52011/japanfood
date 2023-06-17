@@ -60,6 +60,12 @@ export default {
   flex-wrap: wrap;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   max-width: 100vw;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  opacity: 0.8;
+  top: 0;
+  z-index: 10000;
 }
 
 a {
@@ -175,6 +181,11 @@ a {
   .nav__item .list__items {
     display: block;
     padding: 2rem;
+    font-weight: 700;
+  }
+  .nav__item:hover .list__items {
+    transition: color 0.15s ease-in-out;
+    color: #000;
   }
   .navbar__list {
     position: unset;

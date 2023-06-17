@@ -2,12 +2,13 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Slider from "@/components/slider.vue";
-import Homepaeg from "@/components/homepage.vue";
+import Homepage from "@/components/homepage.vue";
 
 export default {
   components: {
     // HelloWorld
     Slider,
+    Homepage,
   },
   setup() {
     return {};
@@ -21,5 +22,5 @@ export default {
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <!-- </div> -->
   <!-- <Slider /> -->
-  <Homepaeg />
+  <Homepage />
 </template>
