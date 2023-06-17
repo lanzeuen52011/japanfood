@@ -216,13 +216,13 @@ export default {
 .footer__brand .footer__brand__img {
   height: 100%;
   max-height: 100px;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 .footer__copyright {
   font-size: 2.1rem;
   color: #fff;
-  opacity: 0.3;
+  opacity: 0.8;
   letter-spacing: 0.05rem;
 }
 

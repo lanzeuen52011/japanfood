@@ -106,7 +106,7 @@ export default {
   overflow: hidden;
   // border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: -1;
+  // z-index: -1;
 }
 
 .image-container {
