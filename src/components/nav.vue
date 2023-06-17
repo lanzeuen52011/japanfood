@@ -7,7 +7,21 @@ export default {
       nav.value = !nav.value;
       console.log(nav.value);
     };
-    return { navchevronToggle, nav };
+    const scrollingdown = ref(false);
+    let prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", () => {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos < currentScrollPos) {
+        // 向下滾動
+        scrollingdown.value = true;
+      }
+      if (prevScrollPos > currentScrollPos) {
+        // 向下滾動
+        scrollingdown.value = false;
+      }
+      prevScrollPos = currentScrollPos;
+    });
+    return { navchevronToggle, nav, scrollingdown };
   },
 };
 </script>
@@ -15,11 +29,10 @@ export default {
 <template>
   <header>
     <h1>Let Him Cook</h1>
-    <nav class="navbar">
-      <router-link class="navbar__a" to="/"
+    <nav :class="['navbar', { hide: scrollingdown }]">
+      <router-link :class="['navbar__a']" to="/"
         ><img class="logo navbar__logo" src="@/image/LetHimCook1.png" alt=""
       /></router-link>
-
       <div
         :class="[
           'collapsible',
@@ -52,6 +65,11 @@ export default {
 <style>
 /* navbar */
 
+.navbar.hide {
+  opacity: 0;
+  overflow: hidden;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -66,6 +84,7 @@ export default {
   opacity: 0.8;
   top: 0;
   z-index: 10000;
+  transition: opacity 0.3s;
 }
 @media screen and (min-width: 1600px) {
   nav.navbar {

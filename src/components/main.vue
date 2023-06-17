@@ -23,20 +23,19 @@ export default {
     </div>
     <div class="main__anime abso">
       <router-link
-        id="welcome"
         class="main__anime-text animation-lineu2d"
-        :to="{ path: '/', hash: '#welcome' }"
+        :to="{ path: '/', hash: '#concept' }"
         >滾動觀看更多</router-link
       >
       <router-link
         class="main__anime-arrow animation-lineu2d"
-        :to="{ path: '/', hash: '#welcome' }"
+        :to="{ path: '/', hash: '#concept' }"
       >
         <img src="@/image/arrow.png" alt="" />
       </router-link>
     </div>
     <div class="main__image">
-      <img class="main__background" src="@/image/food.webp" alt="image" />
+      <img class="main__background" src="@/image/main.webp" alt="image" />
     </div>
   </section>
 </template>
