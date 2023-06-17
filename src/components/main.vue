@@ -11,7 +11,7 @@ export default {
     <header>
       <h2 class="none">主看板</h2>
     </header>
-    <div class="abso main__article__container">
+    <div class="main__article__container abso">
       <article class="main__article animation-articleContainer">
         <h3 class="main__head animation-articleText">
           品味日本之美，享受精緻料理的獨特饗宴
@@ -22,10 +22,18 @@ export default {
       </article>
     </div>
     <div class="main__anime abso">
-      <span class="main__anime-text animation-lineu2d">滾動觀看更多</span>
-      <span class="main__anime-arrow animation-lineu2d">
+      <router-link
+        id="welcome"
+        class="main__anime-text animation-lineu2d"
+        :to="{ path: '/', hash: '#welcome' }"
+        >滾動觀看更多</router-link
+      >
+      <router-link
+        class="main__anime-arrow animation-lineu2d"
+        :to="{ path: '/', hash: '#welcome' }"
+      >
         <img src="@/image/arrow.png" alt="" />
-      </span>
+      </router-link>
     </div>
     <div class="main__image">
       <img class="main__background" src="@/image/food.webp" alt="image" />
@@ -91,6 +99,7 @@ export default {
   letter-spacing: 0.2rem;
   position: relative;
   left: 15px;
+  cursor: pointer;
 }
 .main__anime-arrow {
   width: 25px;
@@ -101,6 +110,13 @@ export default {
   right: 13px;
   position: relative;
   top: 15px;
+  cursor: pointer;
+}
+.main__anime-text:visited {
+  color: #fff;
+}
+.main__anime-arrow:visited {
+  color: #fff;
 }
 
 .animation-lineu2d {
