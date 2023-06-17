@@ -23,7 +23,6 @@ export default {
     </div>
     <div class="main__anime abso">
       <span class="main__anime-text animation-lineu2d">滾動觀看更多</span>
-      <span class="main__anime-line animation-lineu2d"></span>
       <span class="main__anime-arrow animation-lineu2d">
         <img src="@/image/arrow.png" alt="" />
       </span>
@@ -85,7 +84,7 @@ export default {
   writing-mode: vertical-rl;
   white-space: nowrap;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   overflow: hidden;
   padding-right: 0.5rem;
   letter-spacing: 0.2rem;
@@ -96,9 +95,9 @@ export default {
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  right: 14px;
+  right: 28px;
   position: relative;
-  top: 11px;
+  top: 15px;
 }
 
 .animation-lineu2d {
@@ -119,7 +118,7 @@ export default {
     opacity: 1;
   }
   70% {
-    height: 85%;
+    height: 90%;
   }
   71% {
     opacity: 0;
