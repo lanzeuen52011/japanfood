@@ -11,7 +11,7 @@ export default {
     <header>
       <h2 class="none">主看板</h2>
     </header>
-    <div class="abso">
+    <div class="abso main__article__container">
       <article class="main__article animation-articleContainer">
         <h3 class="main__head animation-articleText">
           品味日本之美，享受精緻料理的獨特饗宴
@@ -68,6 +68,7 @@ export default {
   align-items: unset;
   top: 650px;
   height: 160px;
+  overflow: hidden;
 }
 .main__anime-line {
   width: 2px;
@@ -88,6 +89,8 @@ export default {
   overflow: hidden;
   padding-right: 0.5rem;
   letter-spacing: 0.2rem;
+  position: relative;
+  left: 15px;
 }
 .main__anime-arrow {
   width: 25px;
@@ -95,7 +98,7 @@ export default {
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  right: 28px;
+  right: 13px;
   position: relative;
   top: 15px;
 }
@@ -160,5 +163,139 @@ export default {
   filter: contrast(75%);
   z-index: -1;
   position: relative;
+}
+
+@media screen and (min-width: 1600px) {
+  .main__container {
+    max-height: 61vw;
+  }
+  .abso {
+    height: 61vw;
+  }
+  .main__anime {
+    top: 49.5vw;
+  }
+  @keyframes lineu2d {
+    0% {
+      height: 0%;
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    70% {
+      height: 12%;
+    }
+    71% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .main__head {
+    font-size: 2vw;
+  }
+  .main__article {
+    font-size: 1.66vw;
+    height: 14vw;
+  }
+  .main__anime-text {
+    font-size: 1.04vw;
+  }
+  .main__anime-arrow {
+    right: 0.85vw;
+  }
+}
+
+@media screen and (max-width: 1095px) {
+  .main__head {
+    font-size: 2.5rem;
+  }
+  .main__text {
+    font-size: 1.5rem;
+  }
+  .main__anime-text {
+    font-size: 1rem;
+  }
+  .main__anime-arrow {
+    right: 12px;
+  }
+  @keyframes lineu2d {
+    0% {
+      height: 0%;
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    70% {
+      height: 60%;
+    }
+    71% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+@media screen and (max-width: 920px) {
+  .main__head {
+    font-size: 2rem;
+  }
+  .main__article__container {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 768px) {
+  @keyframes articleContainer {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 80%;
+    }
+  }
+  .main__article {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main__background {
+    width: 150%;
+  }
+}
+@media screen and (max-width: 472px) {
+  .main__article {
+    padding-top: 1rem;
+    height: 100px;
+  }
+  .main__head {
+    font-size: 1.8rem;
+  }
+  .main__article__container {
+    height: 500px;
+  }
+  .main__anime {
+    top: 400px;
+  }
+}
+@media screen and (max-width: 415px) {
+  .main__article {
+    padding-top: 0;
+  }
+  .main__head {
+    font-size: 1.3rem;
+  }
+  .main__text {
+    font-size: 1rem;
+  }
 }
 </style>

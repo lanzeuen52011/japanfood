@@ -67,6 +67,15 @@ export default {
   top: 0;
   z-index: 10000;
 }
+@media screen and (min-width: 1600px) {
+  nav.navbar {
+    font-size: 1.11vw;
+    height: 5.555vw;
+  }
+  nav.navbar .navbar__logo {
+    width: 19.4vw;
+  }
+}
 
 a {
   text-decoration: none;
