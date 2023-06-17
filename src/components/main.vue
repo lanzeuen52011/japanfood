@@ -27,7 +27,7 @@ export default {
         <img src="@/image/arrow.png" alt="" />
       </span>
     </div>
-    <div>
+    <div class="main__image">
       <img class="main__background" src="@/image/food.webp" alt="image" />
     </div>
   </section>
@@ -154,5 +154,11 @@ export default {
   100% {
     width: 50%;
   }
+}
+
+.main__image {
+  filter: contrast(75%);
+  z-index: -1;
+  position: relative;
 }
 </style>
