@@ -118,7 +118,7 @@ export default {
     opacity: 1;
   }
   70% {
-    height: 90%;
+    height: 75%;
   }
   71% {
     opacity: 0;
