@@ -76,6 +76,7 @@ export default {
   top: 650px;
   height: 160px;
   overflow: hidden;
+  z-index: 5000;
 }
 .main__anime-line {
   width: 2px;
@@ -260,6 +261,10 @@ export default {
       opacity: 0;
     }
   }
+  .main__image {
+    font-size: 0;
+    line-height: 0;
+  }
 }
 @media screen and (max-width: 920px) {
   .main__head {
@@ -267,6 +272,9 @@ export default {
   }
   .main__article__container {
     height: 600px;
+  }
+  .main__anime {
+    display: none;
   }
 }
 @media screen and (max-width: 768px) {

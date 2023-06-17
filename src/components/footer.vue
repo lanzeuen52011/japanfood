@@ -203,7 +203,7 @@ export default {
   color: #d0d0d0;
 }
 
-.footer__grid {
+.grid.footer__grid {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
 }
@@ -241,7 +241,7 @@ export default {
 }
 
 @media screen and (min-width: 768px) {
-  .footer__grid {
+  .grid.footer__grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 

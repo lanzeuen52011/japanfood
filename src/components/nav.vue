@@ -11,14 +11,17 @@ export default {
     let prevScrollPos = window.pageYOffset;
     window.addEventListener("scroll", () => {
       const currentScrollPos = window.pageYOffset;
-      if (prevScrollPos < currentScrollPos) {
-        // 向下滾動
-        scrollingdown.value = true;
+      if (currentScrollPos >= 40) {
+        if (prevScrollPos < currentScrollPos) {
+          // 向下滾動
+          scrollingdown.value = true;
+        }
+        if (prevScrollPos > currentScrollPos) {
+          // 向下滾動
+          scrollingdown.value = false;
+        }
       }
-      if (prevScrollPos > currentScrollPos) {
-        // 向下滾動
-        scrollingdown.value = false;
-      }
+
       prevScrollPos = currentScrollPos;
     });
     return { navchevronToggle, nav, scrollingdown };
@@ -68,6 +71,7 @@ export default {
 .navbar.hide {
   opacity: 0;
   overflow: hidden;
+  height: 0;
 }
 
 .navbar {
@@ -84,7 +88,7 @@ export default {
   opacity: 0.8;
   top: 0;
   z-index: 10000;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, height 0.3s;
 }
 @media screen and (min-width: 1600px) {
   nav.navbar {
@@ -107,6 +111,7 @@ a {
 
 .navbar__a {
   max-height: 100%;
+  height: inherit;
 }
 
 .list {
@@ -123,6 +128,7 @@ a {
   width: 300px;
   justify-content: center;
   display: flex;
+  height: inherit;
 }
 
 .navbar__list {
