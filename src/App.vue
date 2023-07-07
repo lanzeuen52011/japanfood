@@ -1,8 +1,4 @@
 <template>
-  <!-- <nav>
-     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav> -->
   <router-view />
 </template>
 
@@ -19,6 +15,7 @@ body {
   margin: 0;
 }
 
+// 調色盤
 :root {
   --color-categoreis_background_hover: rgba(34, 34, 34, 0.1);
   --color-categoreis_item_like: #ef7e7e;
@@ -46,7 +43,7 @@ h5 {
   color: var(--color-headings);
   margin-bottom: 1rem;
   line-height: 1.1;
-  cursor: pointer;
+  cursor: default;
 }
 
 h2,

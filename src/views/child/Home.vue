@@ -4,6 +4,7 @@
 // import Slider from "@/components/slider.vue";
 import Main from "@/components/main.vue";
 import BrandConcept from "@/components/concept.vue";
+import Newest from "@/components/newest.vue";
 
 export default {
   components: {
@@ -11,6 +12,7 @@ export default {
     // Slider,
     Main,
     BrandConcept,
+    Newest,
   },
   setup() {
     return {};
@@ -19,11 +21,7 @@ export default {
 </script>
 
 <template>
-  <!-- <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <!-- </div> -->
-  <!-- <Slider /> -->
   <Main />
   <BrandConcept />
+  <Newest />
 </template>

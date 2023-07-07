@@ -192,6 +192,8 @@ export default {
 .footer__background {
   background: #1f1f1f;
   padding: 10px 20px 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .footer__content {

@@ -48,7 +48,7 @@ export default {
         </svg>
         <ul :class="['list', 'collapsible__content', 'header__list']">
           <li class="nav__item">
-            <router-link class="list__items" to="/about">關於我們</router-link>
+            <router-link class="list__items" to="/about">關於LHC</router-link>
           </li>
           <li class="nav__item">
             <router-link class="list__items" to="/menu">私房菜單</router-link>
