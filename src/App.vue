@@ -96,6 +96,17 @@ p {
   align-items: center;
   height: 800px;
 }
+.head {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.head_container {
+  display: flex;
+  padding: 3rem 4rem 1rem;
+  align-items: center;
+}
 
 // #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;

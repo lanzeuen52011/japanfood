@@ -5,6 +5,7 @@
 import Main from "@/components/main.vue";
 import BrandConcept from "@/components/concept.vue";
 import Newest from "@/components/newest.vue";
+import Book from "@/components/book.vue";
 
 export default {
   components: {
@@ -13,6 +14,7 @@ export default {
     Main,
     BrandConcept,
     Newest,
+    Book,
   },
   setup() {
     return {};
@@ -24,4 +26,5 @@ export default {
   <Main />
   <BrandConcept />
   <Newest />
+  <Book />
 </template>
