@@ -7,7 +7,7 @@ export default {
       nav.value = !nav.value;
       console.log(nav.value);
     };
-    const scrollingdown = ref(false);
+    const scrollingdown = ref(true);
     let prevScrollPos = window.pageYOffset;
     window.addEventListener("scroll", () => {
       const currentScrollPos = window.pageYOffset;

@@ -33,7 +33,7 @@ export default {
 .container {
   overflow: hidden;
   > article {
-    height: 52.5vw;
+    min-height: 100vh;
     position: relative;
   }
 }
@@ -168,8 +168,9 @@ export default {
   }
 }
 .book__article-backgroundVideo {
+  min-height: 100vh;
   display: flex;
-  width: 100vw;
+  // width: 100vw;
   position: absolute;
   z-index: -1;
   opacity: 0.6;

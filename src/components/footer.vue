@@ -153,8 +153,12 @@ export default {
   </footer>
 </template>
 
-<style>
+<style lang="scss" scoped>
 /* footer */
+.container {
+  min-height: auto;
+  overflow: visible;
+}
 
 .footer__chevron {
   width: 40px;
@@ -190,6 +194,7 @@ export default {
 }
 
 .footer__background {
+  height: 500px;
   background: #1f1f1f;
   padding: 10px 20px 50px;
   display: flex;
@@ -258,8 +263,11 @@ export default {
     justify-content: start;
   }
 
-  .footer__background .container {
-    margin-top: 3rem;
+  .footer__background {
+    height: auto;
+    .container {
+      margin-top: 3rem;
+    }
   }
 
   .footer__brand {
@@ -291,6 +299,11 @@ export default {
   }
   .footer__content {
     max-width: 1140px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer__brand {
+    margin-top: 0;
   }
 }
 

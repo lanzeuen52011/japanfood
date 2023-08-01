@@ -44,8 +44,9 @@ export default {
 .main__container {
   margin: 0;
   max-width: 100%;
-  max-height: 800px;
-  overflow: hidden;
+}
+.main__article__container {
+  min-height: 100vh;
 }
 .main__article {
   padding-top: 1.5rem;
@@ -73,7 +74,7 @@ export default {
 }
 .main__anime {
   align-items: unset;
-  top: 650px;
+  top: 85vh;
   height: 160px;
   overflow: hidden;
   z-index: 5000;
@@ -176,20 +177,26 @@ export default {
 }
 
 .main__image {
+  font-size: 0;
+  line-height: 0;
   filter: contrast(75%);
   z-index: -1;
   position: relative;
+  .main__background {
+    min-height: 100vh;
+    object-fit: cover;
+  }
 }
 
 @media screen and (min-width: 1600px) {
   .main__container {
-    max-height: 61vw;
+    // max-height: 61vw;
+    // max-height: 50vw;
+    min-height: 100vh;
   }
   .abso {
-    height: 61vw;
-  }
-  .main__anime {
-    top: 49.5vw;
+    // height: 61vw;
+    min-height: 100vh;
   }
   @keyframes lineu2d {
     0% {
@@ -261,18 +268,18 @@ export default {
       opacity: 0;
     }
   }
-  .main__image {
-    font-size: 0;
-    line-height: 0;
-  }
+  // .main__image {
+  //   font-size: 0;
+  //   line-height: 0;
+  // }
 }
 @media screen and (max-width: 920px) {
   .main__head {
     font-size: 2rem;
   }
-  .main__article__container {
-    height: 600px;
-  }
+  // .main__article__container {
+  //   height: 600px;
+  // }
   .main__anime {
     display: none;
   }
@@ -292,7 +299,7 @@ export default {
 }
 @media screen and (max-width: 600px) {
   .main__background {
-    width: 150%;
+    width: 150%; // 將圖片置中
   }
 }
 @media screen and (max-width: 472px) {
@@ -303,9 +310,9 @@ export default {
   .main__head {
     font-size: 1.8rem;
   }
-  .main__article__container {
-    height: 500px;
-  }
+  // .main__article__container {
+  //   height: 500px;
+  // }
   .main__anime {
     top: 400px;
   }

@@ -24,6 +24,7 @@ export default {
   background: #edeae6;
 }
 .concept__container {
+  min-height: 100vh;
   display: flex;
   // max-width: 1150px; (width:1440px)
   // max-width: 79.8vw;
@@ -62,7 +63,8 @@ export default {
   letter-spacing: 0.1rem;
 }
 .concept__image {
-  object-fit: contain;
+  min-height: 100vh;
+  object-fit: cover;
   width: 100%;
   position: relative;
   // right: 50px;
@@ -149,10 +151,9 @@ export default {
     padding: 1rem;
     width: 225px;
   }
-  .concept__image {
-    width: auto;
-    height: 400px;
-  }
+  // .concept__image {
+  //   width: auto;
+  // }
 }
 @media screen and (max-width: 400px) {
 }

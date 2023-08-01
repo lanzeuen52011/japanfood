@@ -87,6 +87,10 @@ p {
 .none {
   display: none;
 }
+.container {
+  min-height: 100vh;
+  overflow: hidden;
+}
 
 .abso {
   position: absolute;
