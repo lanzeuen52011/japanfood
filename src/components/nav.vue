@@ -48,7 +48,7 @@ export default {
         </svg>
         <ul :class="['list', 'collapsible__content', 'header__list']">
           <li class="nav__item">
-            <router-link class="list__items" to="/about">關於LHC</router-link>
+            <router-link class="list__items" to="/">首頁</router-link>
           </li>
           <li class="nav__item">
             <router-link class="list__items" to="/menu">私房菜單</router-link>
@@ -215,7 +215,7 @@ a {
   }
   .nav__item .list__items {
     display: block;
-    padding: 2rem;
+    padding: 2rem 3rem;
     font-weight: 700;
   }
   .nav__item:hover .list__items {
@@ -328,7 +328,7 @@ img {
     height: 0.0694444vw;
   }
   .nav__item .list__items {
-    padding: 1.3888vw;
+    padding: 1.3888vw 2.08333vw;
   }
   .logo {
     padding: 0.69444vw 1.3888vw;

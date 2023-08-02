@@ -32,9 +32,9 @@ export default {
 </script>
 
 <template>
-  <section class="catalog__all container">
+  <section class="catalog__all catalog__container">
     <h2>私房菜單</h2>
-    <section class="catalog container catalog-1" id="fried">
+    <section class="catalog catalog__container catalog-1" id="fried">
       <h3>炸物類</h3>
       <article class="grid">
         <div class="catalog__item-new">
@@ -61,7 +61,7 @@ export default {
         </div>
       </article>
     </section>
-    <section class="catalog container" id="stew">
+    <section class="catalog catalog__container" id="stew">
       <h3>燉煮類</h3>
       <article class="grid">
         <div class="catalog__item-new">
@@ -88,7 +88,7 @@ export default {
         </div>
       </article>
     </section>
-    <section class="catalog container" id="stirfry">
+    <section class="catalog catalog__container" id="stirfry">
       <h3>煎炒類</h3>
       <article class="grid">
         <div class="catalog__item-new">
@@ -115,7 +115,7 @@ export default {
         </div>
       </article>
     </section>
-    <section class="catalog container" id="cold">
+    <section class="catalog catalog__container" id="cold">
       <h3>冷盤類</h3>
       <article class="grid">
         <div class="catalog__item-new">
@@ -146,6 +146,9 @@ export default {
 </template>
 
 <style lang="scss">
+.catalog__container {
+  min-height: auto;
+}
 /* catalog */
 .grid {
   display: grid;
