@@ -38,7 +38,7 @@ export default {
       <h3>炸物類</h3>
       <article class="grid">
         <div class="catalog__item-new">
-          <h4>最新</h4>
+          <h4>暖心餐點</h4>
           <article>
             <h5>grid</h5>
             <ul class="grid">
@@ -65,7 +65,7 @@ export default {
       <h3>燉煮類</h3>
       <article class="grid">
         <div class="catalog__item-new">
-          <h4>最新</h4>
+          <h4>暖心餐點</h4>
           <article>
             <h5>grid</h5>
             <ul class="grid">
@@ -92,7 +92,7 @@ export default {
       <h3>煎炒類</h3>
       <article class="grid">
         <div class="catalog__item-new">
-          <h4>最新</h4>
+          <h4>暖心餐點</h4>
           <article>
             <h5>grid</h5>
             <ul class="grid">
@@ -119,7 +119,7 @@ export default {
       <h3>冷盤類</h3>
       <article class="grid">
         <div class="catalog__item-new">
-          <h4>最新</h4>
+          <h4>暖心餐點</h4>
           <article>
             <h5>grid</h5>
             <ul class="grid">
@@ -336,6 +336,54 @@ export default {
 @media screen and (max-width: 1024px) {
   .catalog__item > .catalog__item_a > article {
     left: 7%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .catalog__item {
+    padding: 0.69444vw;
+    border-radius: 2.08333vw;
+  }
+
+  .grid img {
+    height: 13.888vw;
+    box-shadow: 0.347222vw 0.347222vw 0.69444vw rgba(0, 0, 0, 0.2);
+    border-radius: 2.08333vw;
+  }
+
+  /* .catalog__item:hover > .color{
+    border-radius: 30px;
+    background-image: linear-gradient(180deg,rgb(51, 51, 51) 0,rgba(51,51,51,.338) 3.5%,rgba(51,51,51,.324) 7%,rgba(51,51,51,.306) 10.35%,rgba(51,51,51,.285) 13.85%,rgba(51,51,51,.262) 17.35%,rgba(51,51,51,.237) 20.85%,rgba(51,51,51,.213) 24.35%,rgba(51,51,51,.188) 27.85%,rgba(51,51,51,.165) 31.35%,rgba(51,51,51,.144) 34.85%,rgba(51,51,51,.126) 38.35%,rgba(51,51,51,.112) 41.85%,rgba(51,51,51,.103) 45.35%,#0000001a 48.85%,rgba(51,51,51,.103) 52.35%,rgba(51,51,51,.112) 55.85%,rgba(51,51,51,.126) 59.35%,rgba(51,51,51,.144) 62.85%,rgba(51,51,51,.165) 66.35%,rgba(51,51,51,.188) 69.85%,rgba(51,51,51,.213) 73.35%,rgba(51,51,51,.237) 76.85%,rgba(51,51,51,.262) 80.35%,rgba(51,51,51,.285) 83.85%,rgba(51,51,51,.306) 87.35%,rgba(51,51,51,.324) 90.85%,rgba(51,51,51,.338) 94.35%,rgba(51,51,51,.347) 97.85%,#00000059);
+    background-image: linear-gradient(180deg,#00000057 0,rgba(0,0,0,.338) 3.5%,rgba(0,0,0,.324) 7%,rgba(0,0,0,.306) 10.35%,rgba(0,0,0,.285) 13.85%,rgba(0,0,0,.262) 17.35%,rgba(0,0,0,.237) 20.85%,rgba(0,0,0,.213) 24.35%,rgba(0,0,0,.188) 27.85%,rgba(0,0,0,.165) 31.35%,rgba(0,0,0,.144) 34.85%,rgba(0,0,0,.126) 38.35%,rgba(0,0,0,.112) 41.85%,rgba(0,0,0,.103) 45.35%,#0000001a 48.85%,rgba(0,0,0,.103) 52.35%,rgba(0,0,0,.112) 55.85%,rgba(0,0,0,.126) 59.35%,rgba(0,0,0,.144) 62.85%,rgba(0,0,0,.165) 66.35%,rgba(0,0,0,.188) 69.85%,rgba(0,0,0,.213) 73.35%,rgba(0,0,0,.237) 76.85%,rgba(0,0,0,.262) 80.35%,rgba(0,0,0,.285) 83.85%,rgba(0,0,0,.306) 87.35%,rgba(0,0,0,.324) 90.85%,rgba(0,0,0,.338) 94.35%,rgba(0,0,0,.347) 97.85%,#00000059);
+} */
+  .catalog__item > .color {
+    left: 0.69444vw;
+    top: 0.69444vw;
+    height: 13.8888vw;
+    width: 7.7777vw;
+  }
+  .catalog__item > .catalog__item_a > article {
+    min-width: 7.63888vw;
+    text-shadow: -0.347222vw -0.347222vw 0.69444vw rgba(0, 0, 0, 1);
+  }
+  .item__heading {
+    font-size: 1.52777vw;
+  }
+
+  .item__text {
+    max-width: 7.7777vw;
+    font-size: 1.041666vw;
+  }
+
+  .catalog {
+    border: 0.138888vw solid var(--color-categoreis_item_tags);
+    border-radius: 2.08333vw;
+    margin-bottom: 1.041666vw;
+    padding: 0.347222vw 1.388888vw;
+    box-shadow: 0.347222vw 0.347222vw 0.694444vw rgba(0, 0, 0, 0.2);
+  }
+  .grid ul {
+    border-bottom: 0.13888vw dotted var(--color-categoreis_item_tags);
   }
 }
 </style>

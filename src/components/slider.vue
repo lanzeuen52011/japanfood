@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+// import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 
 // Import Swiper styles
@@ -44,7 +44,7 @@ export default {
       navigation
       loop
       :autoplay="{
-        delay: 5000,
+        delay: 3000,
         pauseOnMouseEnter: true,
         disableOnInteraction: false,
       }"
@@ -102,11 +102,16 @@ export default {
 .slider-container {
   display: block;
   position: relative;
-  width: 100%;
+  width: 300px;
   overflow: hidden;
+  margin: 3rem auto;
   // border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   // z-index: -1;
+  &.container {
+    height: auto;
+    min-height: auto;
+  }
 }
 
 .image-container {
@@ -121,28 +126,32 @@ export default {
 }
 .container {
   display: block;
-  margin: 3rem auto;
   justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
   .slider-container {
-    width: 80%;
+    width: 768px;
   }
-  .container {
-    margin: 5rem auto;
-    max-width: 1400px;
-  }
+  // .container {
+  //   margin: 5rem auto;
+  //   max-width: 1400px;
+  // }
   .slider-container {
-    margin: 0rem auto;
+    margin: 10rem auto;
   }
 }
 
-// @media screen and (min-width: 1024px) {
-//   .slider-container {
-//     width: 1024px;
-//   }
-// }
+@media screen and (min-width: 1024px) {
+  .slider-container {
+    width: 1024px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .slider-container {
+    width: 71.11111111111111vw;
+  }
+}
 
 .image_slider {
   width: 100%;

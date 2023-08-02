@@ -1,8 +1,10 @@
 <script>
+import Slider from "@/components/slider.vue";
 import Catalog from "@/components/catalog.vue";
 
 export default {
   components: {
+    Slider,
     Catalog,
   },
   setup() {
@@ -12,5 +14,6 @@ export default {
 </script>
 
 <template>
+  <Slider />
   <Catalog />
 </template>

@@ -111,7 +111,44 @@ p {
   padding: 3rem 4rem 1rem;
   align-items: center;
 }
+@media screen and (min-width: 1600px) {
+  body {
+    font-size: 1.6666vw;
+  }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: 0.69444vw;
+  }
+
+  h1 {
+    font-size: 4.86111vw;
+  }
+
+  h2 {
+    font-size: 2.7777vw;
+  }
+
+  h3 {
+    font-size: 2.08333vw;
+    margin-top: 1.041666vw;
+    margin-left: 1.041666vw;
+  }
+
+  .abso {
+    height: 5.5555vw;
+  }
+  .head {
+    font-size: 3.47222vw;
+  }
+
+  .head_container {
+    padding: 2.0833vw 2.777777777vw 0.69444444vw;
+  }
+}
 // #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;
 //   -webkit-font-smoothing: antialiased;
