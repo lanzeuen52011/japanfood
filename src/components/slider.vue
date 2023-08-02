@@ -104,7 +104,7 @@ export default {
   position: relative;
   width: 300px;
   overflow: hidden;
-  margin: 3rem auto;
+  margin: 10rem auto 3rem;
   // border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   // z-index: -1;
@@ -129,6 +129,12 @@ export default {
   justify-content: center;
 }
 
+@media screen and (min-width: 426px) {
+  .slider-container {
+    margin: 13rem auto 3rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .slider-container {
     width: 768px;
@@ -138,7 +144,7 @@ export default {
   //   max-width: 1400px;
   // }
   .slider-container {
-    margin: 10rem auto;
+    margin: 15rem auto 7rem;
   }
 }
 
@@ -150,6 +156,7 @@ export default {
 @media screen and (min-width: 1440px) {
   .slider-container {
     width: 71.11111111111111vw;
+    margin: 10.41666vw auto 6.9444444vw;
   }
 }
 
