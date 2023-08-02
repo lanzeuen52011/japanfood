@@ -23,7 +23,7 @@ export default {
         <p>不想出門？</p>
         <p>好懶！不想動？</p>
         <p>想吃好吃的？</p>
-        <button>快點我訂位！</button>
+        <a href="#">快點我訂位！</a>
       </div>
     </article>
   </section>
@@ -39,9 +39,11 @@ export default {
 }
 .head_container {
   display: flex;
-  padding: 2rem 4rem 0;
+  padding: 3rem 4rem 1rem;
   align-items: center;
   justify-content: center;
+  z-index: 1;
+  position: relative;
   > h2 {
     padding: 1rem;
     backdrop-filter: blur(100px); /* 使用 blur(8px) 來添加模糊效果 */
@@ -66,7 +68,7 @@ export default {
   padding: 0 4rem;
   display: flex;
   flex-direction: column;
-  height: 30vw;
+  height: 50%;
   justify-content: center;
   align-items: center;
   font-weight: 700;
@@ -74,23 +76,26 @@ export default {
   > p {
     padding: 1rem;
     backdrop-filter: blur(5px); /* 使用 blur(8px) 來添加模糊效果 */
-    color: #fff;
+    color: #969696;
     font-size: 5rem;
     margin: 1rem;
     cursor: default;
     &:nth-child(1) {
       // translate: -250px 50px;
-      translate: -16.129032vw 3.2258064vw;
+      // translate: -16.129032vw 3.2258064vw;
+      translate: -16.129032vw 7.5vh;
       transform: rotate(28deg);
     }
     &:nth-child(2) {
       // translate: 450px 50px;
-      translate: 27.03225vw 7.2258vw;
+      // translate: 27.03225vw 7.2258vw;
+      translate: 27.03225vw 9vh;
       transform: rotate(-19deg);
     }
     &:nth-child(3) {
       // translate: -300px 275px;
-      translate: -19.35483vw 16.7419354vw;
+      // translate: -19.35483vw 16.7419354vw;
+      translate: -19.35483vw 26.741935vh;
       transform: rotate(-12deg);
     }
   }
@@ -105,7 +110,10 @@ export default {
     filter: blur(10px); /* 使用模糊效果 */
     z-index: -1;
   }
-  > button {
+  > a {
+    translate: 0 -60%;
+    z-index: 1;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,12 +140,12 @@ export default {
     // border: 1px solid #5c5c5c;
     /* border: 1px solid #f0d1a8; */
   }
-  > button:hover {
+  > a:hover {
     background: transparent;
     color: #fff;
   }
-  > button::before,
-  button:after {
+  > a::before,
+  a:after {
     content: "";
     position: absolute;
     left: 0;
@@ -146,7 +154,7 @@ export default {
     background: #fff;
     z-index: -1;
   }
-  > button::before {
+  > a::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -162,17 +170,83 @@ export default {
     /* background: #f0d1a8; */
   }
 
-  > button:hover::before {
+  > a:hover::before {
     transform-origin: 0 50%;
     transform: scaleX(1);
   }
 }
 .book__article-backgroundVideo {
   min-height: 100vh;
+  height: 100%;
   display: flex;
   // width: 100vw;
   position: absolute;
   z-index: -1;
   opacity: 0.6;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1600px) {
+  .head_container {
+    padding: 2.0833vw 2.7777vw 0.69444vw;
+    > h2 {
+      font-size: 3.47222vw;
+      padding: 0.69444vw;
+    }
+  }
+  .book__content {
+    padding: 0 2.7777vw;
+    > p {
+      padding: 0.69444vw;
+      font-size: 3.4722vw;
+      margin: 0.69444vw;
+    }
+    > a {
+      font-size: 2.0833vw;
+      height: 6.94444vw;
+      padding: 2.34375vw 1.9097222vw;
+    }
+  }
+}
+// @media screen and (max-width: 768px) {
+//   .book__content {
+//     > a {
+//       background: transparent;
+//       color: #fff;
+//     }
+//     > a::before {
+//       transform: scaleX(1);
+//     }
+//   }
+// }
+
+@media screen and (max-width: 550px) {
+  .head_container {
+    > h2 {
+      font-size: 3.4rem;
+      white-space: nowrap;
+    }
+  }
+  .book__content {
+    > p {
+      font-size: 2.4rem;
+      &:nth-child(2) {
+        translate: 27.03225vw 8vh;
+      }
+    }
+    > a {
+      font-size: 2.4rem;
+      height: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .head_container {
+    h2 {
+      font-size: 3rem;
+    }
+  }
 }
 </style>

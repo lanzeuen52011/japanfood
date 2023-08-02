@@ -93,7 +93,7 @@ export default {
 @media screen and (min-width: 1600px) {
   nav.navbar {
     font-size: 1.11vw;
-    height: 5.555vw;
+    height: 5.55555vw;
   }
   nav.navbar .navbar__logo {
     width: 19.4vw;
@@ -129,6 +129,7 @@ a {
   justify-content: center;
   display: flex;
   height: inherit;
+  object-fit: cover;
 }
 
 .navbar__list {
@@ -304,5 +305,39 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 1600px) {
+  .list .list__items {
+    padding: 0.69444vw;
+  }
+
+  .navbar__logo {
+    width: 20.8333vw;
+  }
+  .navbar .navbar__logo {
+    width: 19.4444vw;
+  }
+  .list.collapsible__content {
+    padding-right: 3.47222vw;
+  }
+  .nav__item::before {
+    height: 0.0694444vw;
+  }
+  .nav__item::after {
+    height: 0.0694444vw;
+  }
+  .nav__item .list__items {
+    padding: 1.3888vw;
+  }
+  .logo {
+    padding: 0.69444vw 1.3888vw;
+  }
+  .collapsible__heading {
+    font-size: 2.08333vw;
+  }
+  .collapsible__content {
+    min-width: 5.902777vw;
+  }
 }
 </style>

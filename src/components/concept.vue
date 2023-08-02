@@ -38,13 +38,13 @@ export default {
   width: 450px;
   background: rgba(203, 202, 201, 0.5);
   color: #fefefe;
-  height: 50%;
+  // height: 50%;
   z-index: 1;
   position: absolute;
   top: 300px;
   left: 250px;
   padding: 5rem;
-  writing-mode: vertical-lr;
+  // writing-mode: vertical-lr;
   text-align: justify;
   letter-spacing: 0.1rem;
   margin: 0;
@@ -85,7 +85,7 @@ export default {
     top: 20.83vw;
     left: 17.36vw;
     padding: 5rem;
-    letter-spacing: 0.694vw;
+    letter-spacing: 0.394vw;
     font-size: 1.5vw;
   }
 }
@@ -135,7 +135,7 @@ export default {
     top: 150px;
     font-size: 1.2rem;
     width: 300px;
-    writing-mode: vertical-lr;
+    // writing-mode: vertical-lr;
   }
 }
 @media screen and (max-width: 580px) {

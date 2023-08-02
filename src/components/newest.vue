@@ -167,7 +167,8 @@ export default {
   opacity: 1;
 }
 .grid .catalog__item:hover {
-  scale: 1.05;
+  // scale: 1.05;
+  scale: 1;
   opacity: 1;
 }
 .newest__grid.grid {
@@ -337,7 +338,7 @@ export default {
     margin: 0;
   }
   .newest__svg[data-v-41f73a14] {
-    scale: 1;
+    // scale: 1;
     margin: 0rem;
   }
   .grid .catalog__item > .catalog__item_a > article {

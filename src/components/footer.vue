@@ -33,7 +33,7 @@ export default {
 
 <template>
   <footer class="footer__background">
-    <div class="container grid footer__content footer__grid">
+    <div class="container footer__container grid footer__grid">
       <section
         :class="[
           'collapsible',
@@ -153,9 +153,9 @@ export default {
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 /* footer */
-.container {
+.footer__container {
   min-height: auto;
   overflow: visible;
 }
@@ -196,7 +196,7 @@ export default {
 .footer__background {
   height: 500px;
   background: #1f1f1f;
-  padding: 10px 20px 50px;
+  padding: 20px 20px 50px;
   display: flex;
   justify-content: center;
 }
@@ -212,7 +212,7 @@ export default {
 
 .grid.footer__grid {
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+  // grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
 }
 
 .footer__brand {
@@ -224,6 +224,7 @@ export default {
   height: 100%;
   max-height: 100px;
   border-radius: 2px;
+  object-fit: contain;
 }
 
 .footer__copyright {
@@ -234,9 +235,30 @@ export default {
 }
 
 @media screen and (min-width: 1440px) {
+  .footer__background {
+    padding: 1.38888vw 1.38888vw 3.472222vw;
+  }
   .footer__content .footer__brand .footer__brand__img {
     height: 60px;
     align-self: center;
+  }
+  .footer__heading {
+    &.collapsible__heading {
+      font-size: 1.11111vw;
+    }
+  }
+  .footer__content {
+    font-size: 1.041666vw;
+  }
+  .footer__container {
+    &.container {
+      max-width: 79.1666vw;
+    }
+  }
+  .footer__brand {
+    .footer__copyright {
+      font-size: 1.0416666vw;
+    }
   }
 }
 
@@ -272,7 +294,7 @@ export default {
 
   .footer__brand {
     order: -1;
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -280,7 +302,7 @@ export default {
     padding-right: 2rem;
   }
   .footer__brand .footer__brand__img {
-    height: 36px;
+    // height: 36px;
     align-self: center;
   }
 
@@ -297,7 +319,7 @@ export default {
   .collapsible__content .list {
     font-size: 1.5rem;
   }
-  .footer__content {
+  .footer__container {
     max-width: 1140px;
   }
 }
