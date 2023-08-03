@@ -1,9 +1,9 @@
 <script>
-import Catalog from "@/components/catalog.vue";
+import Login from "@/components/login.vue";
 
 export default {
   components: {
-    Catalog,
+    Login,
   },
   setup() {
     return {};
@@ -12,5 +12,5 @@ export default {
 </script>
 
 <template>
-  <Catalog />
+  <Login style="margin: calc(var(--var-first_for_navbar) + 1rem) auto 0" />
 </template>

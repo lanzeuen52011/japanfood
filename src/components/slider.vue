@@ -104,7 +104,8 @@ export default {
   position: relative;
   width: 300px;
   overflow: hidden;
-  margin: 10rem auto 3rem;
+  // margin: 10rem auto 3rem;
+  margin: calc(var(--var-first_for_navbar) + 3rem) auto 3rem;
   // border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   // z-index: -1;
@@ -128,21 +129,21 @@ export default {
 
 @media screen and (min-width: 426px) {
   .slider-container {
-    margin: 13rem auto 3rem;
+    // margin: 13rem auto 3rem;
+    margin: calc(var(--var-first_for_navbar) + 3rem) auto 3rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   .slider-container {
     width: 768px;
+    // margin: 15rem auto 7rem;
+    margin: calc(var(--var-first_for_navbar) + 7rem) auto 7rem;
   }
   // .container {
   //   margin: 5rem auto;
   //   max-width: 1400px;
   // }
-  .slider-container {
-    margin: 15rem auto 7rem;
-  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -153,7 +154,8 @@ export default {
 @media screen and (min-width: 1440px) {
   .slider-container {
     width: 71.11111111111111vw;
-    margin: 10.41666vw auto 6.9444444vw;
+    // margin: 10.41666vw auto 6.9444444vw;
+    margin: calc(var(--var-first_for_navbar) + 4.86111vw) auto 6.9444444vw;
   }
 }
 

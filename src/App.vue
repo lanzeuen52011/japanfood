@@ -27,6 +27,21 @@ body {
   --color-line: #000;
 }
 
+// 變數宣告
+:root {
+  --var-first_for_navbar: 7rem; // nav有空間，所以讓其他網頁內容有空間
+  @media screen and (min-width: 426px) {
+    --var-first_for_navbar: 10rem;
+  }
+  @media screen and (min-width: 768px) {
+    --var-first_for_navbar: 8rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    --var-first_for_navbar: 5.555555vw;
+  }
+}
+
 /*Typographiy*/
 
 *,
