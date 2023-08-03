@@ -25,6 +25,10 @@ body {
   --color-body: #5c5c5c;
   --color-headings: #494949;
   --color-line: #000;
+  --color-member_page_background: #f0b9b6;
+  --color-member_page_darken: #e1949a;
+  --color-member_page_darken1: #c45961;
+  --color-button: #c45961; //af5964
 }
 
 // 變數宣告

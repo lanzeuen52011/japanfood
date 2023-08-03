@@ -109,10 +109,10 @@ export default {
   outline: 0;
   font-weight: 700;
 
-  color: #5c5c5c;
+  color: var(--color-button);
   /* color: #e0840a; */
 
-  border: 1px solid #5c5c5c;
+  border: 1px solid var(--color-button);
   /* border: 1px solid #f0d1a8; */
 }
 .newest__text:hover {
@@ -141,7 +141,7 @@ export default {
   transform: scaleX(0);
   transition: transform 0.4s ease;
 
-  background: #000;
+  background: var(--color-button);
   /* background: #f0d1a8; */
 }
 
@@ -156,7 +156,7 @@ export default {
   scale: 1.3;
   margin: 1rem;
 
-  fill: #5c5c5c;
+  fill: var(--color-button);
   /* fill: #f0d1a8; */
 }
 .newest__text:hover .newest__svg {

@@ -132,17 +132,18 @@ export default {
     outline: 0;
     font-weight: 700;
 
-    color: #3c3c3c;
+    color: #fff;
     // color: #5c5c5c;
     /* color: #e0840a; */
 
-    border: 1px solid #3b3a3a;
+    border: 1px solid #fff;
     // border: 1px solid #5c5c5c;
     /* border: 1px solid #f0d1a8; */
   }
   > a:hover {
     background: transparent;
     color: #fff;
+    border: 1px solid var(--color-button);
   }
   > a::before,
   a:after {
@@ -166,7 +167,7 @@ export default {
     transform: scaleX(0);
     transition: transform 0.4s ease;
 
-    background: #000;
+    background: var(--color-button);
     /* background: #f0d1a8; */
   }
 

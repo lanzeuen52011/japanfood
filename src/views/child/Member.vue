@@ -12,5 +12,5 @@ export default {
 </script>
 
 <template>
-  <Login style="margin: calc(var(--var-first_for_navbar) + 1rem) auto 0" />
+  <Login style="margin: calc(var(--var-first_for_navbar) + 1rem) auto 10rem" />
 </template>
