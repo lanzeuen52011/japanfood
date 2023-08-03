@@ -65,7 +65,7 @@ export default {
   </header>
 </template>
 
-<style>
+<style lang="scss">
 /* navbar */
 
 .navbar.hide {
@@ -186,6 +186,7 @@ a {
   .nav__item {
     display: inline-block;
     position: relative;
+    margin: 0 1rem;
     cursor: pointer;
   }
   .nav__item::before {
@@ -203,7 +204,6 @@ a {
   .nav__item::before {
     content: "";
     position: absolute;
-
     width: 0;
     transition: 1s;
     background: #000;
@@ -213,6 +213,15 @@ a {
   .nav__item:hover::before {
     width: 100%;
   }
+  .list__items.router-link-exact-active {
+    color: #000;
+  }
+  .nav__item:has(> .router-link-exact-active).nav__item::before,
+  .nav__item:has(> .router-link-exact-active).nav__item::after {
+    // 如果子元素有出現.router-link-exact-active的class，那父元素的.nav__item的.nav__item::before和.nav__item::after會被style
+    width: 100%;
+  }
+
   .nav__item .list__items {
     display: block;
     padding: 2rem 3rem;
@@ -222,6 +231,7 @@ a {
     transition: color 0.15s ease-in-out;
     color: #000;
   }
+
   .navbar__list {
     position: unset;
     padding: 0;
@@ -320,6 +330,9 @@ img {
   }
   .list.collapsible__content {
     padding-right: 3.47222vw;
+  }
+  .nav__item {
+    margin: 0 0.6944444444vw;
   }
   .nav__item::before {
     height: 0.0694444vw;

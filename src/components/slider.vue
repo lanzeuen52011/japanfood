@@ -109,6 +109,7 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   // z-index: -1;
   &.container {
+    justify-content: center;
     height: auto;
     min-height: auto;
   }
@@ -123,10 +124,6 @@ export default {
 .swiper-button-prev {
   color: #fff;
   opacity: 0.8;
-}
-.container {
-  display: block;
-  justify-content: center;
 }
 
 @media screen and (min-width: 426px) {
