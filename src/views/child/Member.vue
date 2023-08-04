@@ -14,16 +14,29 @@ export default {
       login.value = !login.value;
       console.log(login.value);
     };
+    let numberOfCircles = ref(60);
+
     return {
       handleLogin,
       login,
+      numberOfCircles,
     };
   },
 };
 </script>
 
 <template>
-  <section class="background"></section>
+  <section class="background">
+    <div
+      v-for="i in numberOfCircles"
+      :key="i"
+      :class="{
+        [`circle-${i}`]: true,
+        [`circle-${i}-move`]: login,
+      }"
+    ></div>
+    <div class="circle-1"></div>
+  </section>
   <Register
     id="Register"
     :class="['Member', { ani: !login }]"
@@ -42,10 +55,47 @@ export default {
   // margin: calc(var(--var-first_for_navbar) + 1rem) auto 10rem;
   position: relative;
 }
+$max-vw: 100;
+$max-vh: 100;
+@for $i from 0 to 60 {
+  $random-left: random($max-vw);
+  $random-top: random($max-vh);
+
+  // 隨機選取計算符號
+  $calc-operator: null;
+  $random-operator: random();
+  @if $random-operator < 0.5 {
+    $calc-operator: "+";
+  } @else {
+    $calc-operator: "-";
+  }
+
+  .circle-#{$i} {
+    width: 3.472222vw;
+    position: absolute;
+    height: 3.472222vw;
+    border: 0;
+    border-radius: 100%;
+    left: #{$random-left}vw;
+    top: #{$random-top}vh;
+    z-index: -1;
+    transition: left 0.3s, top 0.3s;
+    @if $i % 2 == 0 {
+      background: var(--color-member_page_background);
+    } @else {
+      background: var(--color-member_page_darken);
+    }
+  }
+  .circle-#{$i}-move {
+    left: calc(#{$random-left}vw #{$calc-operator} 3.472222vw);
+    top: calc(#{$random-top}vh #{$calc-operator} 3.472222vw);
+  }
+}
+
 .Member {
   position: absolute;
   margin: 0;
-  top: calc(var(--var-first_for_navbar) + 1rem);
+  top: calc(var(--var-first_for_navbar) + 5vh);
   left: 50%;
   transform: translate(-50%, 0%);
   // transition: display 250ms;
@@ -98,7 +148,7 @@ export default {
   100% {
     scale: 0.6;
     opacity: 0;
-    transform: translate(-70%, 0%);
+    transform: translate(-100%, 0%);
   }
 }
 </style>

@@ -17,7 +17,7 @@ export default {
   <section class="container">
     <img class="form__img" src="@/image/favicon.jpg" alt="" />
     <span class="form__title">登入</span>
-    <form class="form">
+    <form class="form" action="">
       <div class="input-group">
         <i class="ri-mail-line form__icon"></i>
         <input
@@ -27,7 +27,7 @@ export default {
           class="input-group__input"
         />
         <label for="login_email" class="input-group__label"
-          >Email電子信箱</label
+          >Email電子信箱(帳號)</label
         >
         <span class="form__bar"></span>
       </div>
@@ -234,6 +234,73 @@ input {
 @media screen and (max-width: 425px) {
   .container {
     width: 90vw;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  /* General styles end */
+  .container {
+    width: 27.7777vw;
+    padding: 6.944444vw 0;
+    border-radius: 0.6944444vw;
+    box-shadow: 0 0.06944444vw 0.6944444vw rgba(0, 0, 0, 0.1);
+    font-size: 1.11111vw;
+  }
+  // .container::before {
+  //   height: 2.08333vw;
+  //   border-radius: 0.6944444vw 0.6944444vw 100% 100%;
+  // }
+  .form__title {
+    top: 2.430555vw;
+    letter-spacing: 0.3472222vw;
+    margin-left: 0.6944444vw;
+    font-size: 2.08333vw;
+    left: 6.944444vw;
+  }
+  .form__img {
+    width: 1.7361111vw;
+    top: 2.777777vw;
+    font-size: 1.7361111vw;
+  }
+  .form {
+    padding: 1.7361111vw;
+    transform: translateX(6.9444444vw);
+  }
+  .input-group {
+    margin-top: 0.6944444vw;
+  }
+  .form__icon {
+    font-size: 1.388888vw;
+    margin-right: 0.6944444vw;
+  }
+  .input-group__input {
+    margin-top: 0.3472222vw;
+    padding-block: 0.6944444vw;
+    padding: 0.6944444vw;
+    border-radius: 0.27777777vw;
+    outline: 0.1388888vw solid #fff;
+  }
+  .form__bar {
+    height: 0.06944444vw;
+  }
+  .form__bar::before {
+    height: 0.13888888vw;
+  }
+  .input-group__label {
+    translate: 2.7777777vw 0.833333333vw;
+  }
+  .input-group__input:focus + .input-group__label,
+  .input-group__input:valid + .input-group__label {
+    padding-inline: 0.34722222vw;
+    translate: -0.34722222vw -0.34722222vw;
+  }
+  .form__button {
+    margin: 1.7361111vw auto 2.08333333vw;
+    padding: 0.6944444vw 3.4722222vw;
+    border-radius: 2.08333333vw;
+  }
+  .form__switch {
+    font-size: 1.04166666vw;
   }
 }
 </style>

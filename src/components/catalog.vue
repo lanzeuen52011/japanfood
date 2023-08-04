@@ -23,8 +23,8 @@ export default {
         (method) => method.method == "stirfry"
       );
       coldArr.data = foodArr.data.filter((method) => method.method == "cold");
-      console.log(foodArr.data);
-      console.log(friedArr.data);
+      // console.log(foodArr.data);
+      // console.log(friedArr.data);
     });
     return { friedArr, stewArr, stirfryArr, coldArr };
   },

@@ -3,11 +3,16 @@ import { onMounted, ref } from "vue";
 export default {
   setup() {
     const nav = ref(false);
+
     const navchevronToggle = (element) => {
       nav.value = !nav.value;
       console.log(nav.value);
     };
-    const scrollingdown = ref(true);
+    const scrollingdown = ref(false);
+    if (window.location.pathname == "/") {
+      // 首頁的話nav會先收起來，其他的頁面則是先將nav打開
+      scrollingdown.value = true;
+    }
     let prevScrollPos = window.pageYOffset;
     window.addEventListener("scroll", () => {
       const currentScrollPos = window.pageYOffset;

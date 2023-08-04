@@ -18,9 +18,8 @@ const routes = [
         //此處為點入About時，首先載入的嵌套內容。
         path: "/menu",
         name: "menu",
-        component: import(
-          /* webpackChunkName: "about" */ "@/views/child/Menu.vue"
-        ),
+        component: () =>
+          import(/* webpackChunkName: "about" */ "@/views/child/Menu.vue"),
       },
       {
         path: "/about",
