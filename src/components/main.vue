@@ -63,7 +63,7 @@ export default {
 }
 .main__head {
   color: #fff;
-  cursor: unset;
+  // cursor: unset;
   margin-right: 1.5rem;
   overflow: hidden;
   white-space: nowrap;

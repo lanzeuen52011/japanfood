@@ -25,6 +25,7 @@ body {
   --color-body: #5c5c5c;
   --color-headings: #494949;
   --color-line: #000;
+  --color-member_page_background1: #ffe6ea;
   --color-member_page_background: #f0b9b6;
   --color-member_page_darken: rgba(225, 148, 154, 1);
   // --color-member_page_darken: #e1949a;
@@ -102,6 +103,7 @@ h6 {
 
 p {
   margin-top: 0;
+  cursor: default;
 }
 
 .none {

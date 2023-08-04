@@ -61,6 +61,7 @@ export default {
   left: 250px;
   padding: 2.5rem;
   letter-spacing: 0.1rem;
+  cursor: default;
 }
 .concept__image {
   min-height: 100vh;

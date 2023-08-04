@@ -214,6 +214,9 @@ export default {
     background: rgba(235, 232, 228, 0.3);
     text-shadow: 5px 5px 5px rgba(255, 255, 255, 1);
     color: var(--color-body);
+    > p {
+      cursor: pointer;
+    }
   }
 }
 .grid img {

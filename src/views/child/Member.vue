@@ -1,7 +1,7 @@
 <script>
 import Register from "@/components/register.vue";
 import Login from "@/components/login.vue";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 export default {
   components: {
@@ -10,15 +10,24 @@ export default {
   },
   setup() {
     const login = ref(false);
+    const circle = ref(false);
     const handleLogin = () => {
       login.value = !login.value;
-      console.log(login.value);
+      circle.value = !circle.value;
+    };
+    const circleAni = () => {
+      circle.value = !circle.value;
     };
     let numberOfCircles = ref(60);
-
+    onMounted(() => {
+      setInterval(() => {
+        circleAni();
+      }, 3000);
+    });
     return {
       handleLogin,
       login,
+      circle,
       numberOfCircles,
     };
   },
@@ -32,10 +41,9 @@ export default {
       :key="i"
       :class="{
         [`circle-${i}`]: true,
-        [`circle-${i}-move`]: login,
+        [`circle-${i}-move`]: circle,
       }"
     ></div>
-    <div class="circle-1"></div>
   </section>
   <Register
     id="Register"
@@ -55,6 +63,65 @@ export default {
   // margin: calc(var(--var-first_for_navbar) + 1rem) auto 10rem;
   position: relative;
 }
+// $max-vw: 100;
+// $max-vh: 100;
+// @for $i from 0 to 60 {
+//   $random-left: random($max-vw);
+//   $random-top: random($max-vh);
+
+//   // 隨機選取計算符號
+//   $calc-operator: null;
+//   $random-operator: random();
+//   @if $random-operator < 0.5 {
+//     $calc-operator: "+";
+//   } @else {
+//     $calc-operator: "-";
+//   }
+
+//   .circle-#{$i} {
+//     width: 3.472222vw;
+//     position: absolute;
+//     height: 3.472222vw;
+//     border: 0;
+//     border-radius: 100%;
+//     z-index: -1;
+//     transition: left 0.5s, top 0.5s, right 0.5s, bottom 0.5s;
+
+//     @if $i % 4 == 0 {
+//       top: #{$random-top}vh;
+//       left: #{$random-left}vw;
+//       background: var(--color-member_page_background);
+//     } @else if $i % 4 == 1 {
+//       top: #{$random-top}vh;
+//       right: #{$random-left}vw;
+//       background: var(--color-member_page_background1);
+//     } @else if $i % 4 == 2 {
+//       bottom: #{$random-top}vh;
+//       left: #{$random-left}vw;
+//       background: var(--color-member_page_darken);
+//     } @else {
+//       bottom: #{$random-top}vh;
+//       right: #{$random-left}vw;
+//       background: var(--color-member_page_darken1);
+//     }
+//   }
+//   .circle-#{$i}-move {
+//     @if $i % 4 == 0 {
+//       top: calc(#{$random-top}vh #{$calc-operator} 3.472222vw);
+//       left: calc(#{$random-left}vw #{$calc-operator} 3.472222vw);
+//     } @else if $i % 4 == 1 {
+//       top: calc(#{$random-top}vh #{$calc-operator} 3.472222vw);
+//       right: calc(#{$random-left}vw #{$calc-operator} 3.472222vw);
+//     } @else if $i % 4 == 2 {
+//       bottom: calc(#{$random-top}vh #{$calc-operator} 3.472222vw);
+//       left: calc(#{$random-left}vw #{$calc-operator} 3.472222vw);
+//     } @else {
+//       bottom: calc(#{$random-top}vh #{$calc-operator} 3.472222vw);
+//       right: calc(#{$random-left}vw #{$calc-operator} 3.472222vw);
+//     }
+//   }
+// }
+
 $max-vw: 100;
 $max-vh: 100;
 @for $i from 0 to 60 {
