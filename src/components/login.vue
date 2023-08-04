@@ -14,53 +14,41 @@ export default {
 };
 </script>
 <template>
-  <div class="container">
+  <section class="container">
     <img class="form__img" src="@/image/favicon.jpg" alt="" />
-    <span class="form__title">註冊</span>
+    <span class="form__title">登入</span>
     <form class="form">
       <div class="input-group">
-        <i class="ri-user-line form__icon"></i>
-        <input type="text" id="name" required class="input-group__input" />
-        <label for="name" class="input-group__label">姓名</label>
-        <span class="form__bar"></span>
-      </div>
-      <div class="input-group">
         <i class="ri-mail-line form__icon"></i>
-        <input type="text" id="email" required class="input-group__input" />
-        <label for="email" class="input-group__label">Email電子信箱</label>
-        <span class="form__bar"></span>
-      </div>
-      <div class="input-group">
-        <i class="ri-lock-line form__icon"></i>
         <input
-          id="password"
-          type="password"
+          type="text"
+          id="login_email"
           required
           class="input-group__input"
         />
-        <label for="password" class="input-group__label">密碼</label>
-        <span class="form__bar"></span>
-      </div>
-      <div class="input-group">
-        <i class="ri-lock-line form__icon"></i>
-        <input
-          id="confirm_password"
-          type="password"
-          required
-          class="input-group__input"
-        />
-        <label for="confirm_password" class="input-group__label"
-          >確認密碼</label
+        <label for="login_email" class="input-group__label"
+          >Email電子信箱</label
         >
         <span class="form__bar"></span>
       </div>
-      <button type="submit" class="form__button">註冊</button>
+      <div class="input-group">
+        <i class="ri-lock-line form__icon"></i>
+        <input
+          id="login_password"
+          type="password"
+          required
+          class="input-group__input"
+        />
+        <label for="login_password" class="input-group__label">密碼</label>
+        <span class="form__bar"></span>
+      </div>
+      <button type="submit" class="form__button">登入</button>
       <p class="form__switch">
-        已經有帳號了嗎？
-        <a type="switch" @click="props.handleLogin">點我登入</a>
+        沒有帳號嗎？
+        <a type="switch" @click="props.handleLogin">點我註冊</a>
       </p>
     </form>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>

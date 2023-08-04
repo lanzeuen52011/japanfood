@@ -14,7 +14,7 @@ export default {
 };
 </script>
 <template>
-  <div class="container">
+  <section class="container">
     <img class="form__img" src="@/image/favicon.jpg" alt="" />
     <span class="form__title">註冊</span>
     <form class="form">
@@ -60,7 +60,7 @@ export default {
         <a type="switch" @click="props.handleLogin">點我登入</a>
       </p>
     </form>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
