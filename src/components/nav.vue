@@ -30,21 +30,9 @@ export default {
       prevScrollPos = currentScrollPos;
     });
     const wrapperActive = ref(false);
-    const btnEl = document.querySelector(".btn");
     const toggleOptions = () => {
-      // const wrapperEl = document.querySelector(".wrapper");
-      // const iconEl = btnEl.querySelector("i");
-
-      // wrapperEl.classList.toggle("active");
       wrapperActive.value = !wrapperActive.value;
-
-      // if (iconEl.classList.contains("ri-share-line")) {
-      //   iconEl.classList.replace("ri-share-line", "ri-close-line");
-      // } else {
-      //   iconEl.classList.replace("ri-close-line", "ri-share-line");
-      // }
     };
-    // btnEl.addEventListener("click", toggleOptions);
     return {
       navchevronToggle,
       nav,
@@ -106,12 +94,12 @@ export default {
             <i class="ri-instagram-line"></i>
           </a>
         </li>
-        <li class="item" style="--d: 0.25s">
+        <li class="item" style="--d: 0.05s">
           <a href="#" class="link tw">
             <i class="ri-twitter-line"></i>
           </a>
         </li>
-        <li class="item" style="--d: 0.5s">
+        <li class="item" style="--d: 0.1s">
           <a href="#" class="link sc">
             <i class="ri-snapchat-line"></i>
           </a>
@@ -375,7 +363,11 @@ img {
 
 /* General styles end */
 .wrapper {
-  position: relative;
+  position: fixed;
+  cursor: pointer;
+  bottom: 70px;
+  z-index: 10000;
+  right: 70px;
 }
 .wrapperList {
   padding: 0;
@@ -409,13 +401,19 @@ img {
   transition-delay: var(--d);
 }
 .wrapper.wrapperActive .item:nth-child(1) {
-  transform: translateX(-65px);
+  // transform: translateX(-65px);
+  transform: translateX(-67.5px);
+  // transform: translateX(-90px);
 }
 .wrapper.wrapperActive .item:nth-child(2) {
-  transform: translateY(-65px);
+  // transform: translateY(-65px);
+  transform: translate(-45px, -45px);
+  // transform: translate(-60px, -60px);
 }
 .wrapper.wrapperActive .item:nth-child(3) {
-  transform: translateX(65px);
+  // transform: translateX(65px);
+  transform: translate(0px, -67.5px);
+  // transform: translate(0px, -90px);
 }
 .link:hover {
   color: #fff;
