@@ -131,6 +131,19 @@ p {
   padding: 3rem 4rem 1rem;
   align-items: center;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+}
+
+.grid li {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
 @media screen and (min-width: 1600px) {
   body {
     font-size: 1.6666vw;

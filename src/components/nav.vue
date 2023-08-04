@@ -29,7 +29,29 @@ export default {
 
       prevScrollPos = currentScrollPos;
     });
-    return { navchevronToggle, nav, scrollingdown };
+    const wrapperActive = ref(false);
+    const btnEl = document.querySelector(".btn");
+    const toggleOptions = () => {
+      // const wrapperEl = document.querySelector(".wrapper");
+      // const iconEl = btnEl.querySelector("i");
+
+      // wrapperEl.classList.toggle("active");
+      wrapperActive.value = !wrapperActive.value;
+
+      // if (iconEl.classList.contains("ri-share-line")) {
+      //   iconEl.classList.replace("ri-share-line", "ri-close-line");
+      // } else {
+      //   iconEl.classList.replace("ri-close-line", "ri-share-line");
+      // }
+    };
+    // btnEl.addEventListener("click", toggleOptions);
+    return {
+      navchevronToggle,
+      nav,
+      scrollingdown,
+      toggleOptions,
+      wrapperActive,
+    };
   },
 };
 </script>
@@ -67,6 +89,35 @@ export default {
         </ul>
       </div>
     </nav>
+    <section :class="['wrapper', { wrapperActive: wrapperActive }]">
+      <button
+        @click="toggleOptions"
+        :class="{
+          ['btn']: true,
+          [`ri-share-line`]: !wrapperActive,
+          [`ri-close-line`]: wrapperActive,
+        }"
+      >
+        <!-- <i class="ri-share-line"></i> -->
+      </button>
+      <ul class="wrapperList">
+        <li class="item">
+          <a href="#" class="link ig">
+            <i class="ri-instagram-line"></i>
+          </a>
+        </li>
+        <li class="item" style="--d: 0.25s">
+          <a href="#" class="link tw">
+            <i class="ri-twitter-line"></i>
+          </a>
+        </li>
+        <li class="item" style="--d: 0.5s">
+          <a href="#" class="link sc">
+            <i class="ri-snapchat-line"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
   </header>
 </template>
 
@@ -320,6 +371,72 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* General styles end */
+.wrapper {
+  position: relative;
+}
+.wrapperList {
+  padding: 0;
+  margin: 0;
+}
+.wrapper :is(.btn, .link) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #151515;
+  border-radius: 50%;
+}
+.btn {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+.active .btn,
+.btn:hover {
+  outline: 3px solid #0561ee;
+  outline-offset: -4px;
+}
+.item {
+  position: absolute;
+  list-style: none;
+  transition: transform 0.5s;
+  transition-delay: var(--d);
+}
+.wrapper.wrapperActive .item:nth-child(1) {
+  transform: translateX(-65px);
+}
+.wrapper.wrapperActive .item:nth-child(2) {
+  transform: translateY(-65px);
+}
+.wrapper.wrapperActive .item:nth-child(3) {
+  transform: translateX(65px);
+}
+.link:hover {
+  color: #fff;
+  transition: background-color 0.5s;
+}
+.ig:hover {
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+.tw:hover {
+  background-color: #1da1f2;
+}
+.sc:hover {
+  background-color: #fffc00;
+  color: inherit;
 }
 
 @media screen and (min-width: 1600px) {
