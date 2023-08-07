@@ -13,6 +13,9 @@ export default {
       console.log(nav.value);
     };
     const scrollingdown = ref(false);
+    const handleNavbar = () => {
+      scrollingdown.value = !scrollingdown.value;
+    };
     if (window.location.pathname == "/") {
       // 首頁的話nav會先收起來，其他的頁面則是先將nav打開
       scrollingdown.value = true;
@@ -37,6 +40,7 @@ export default {
       navchevronToggle,
       nav,
       scrollingdown,
+      handleNavbar,
     };
   },
 };
@@ -75,7 +79,7 @@ export default {
         </ul>
       </div>
     </nav>
-    <NavButton />
+    <NavButton :handleNavbar="handleNavbar" />
   </header>
 </template>
 
