@@ -37,15 +37,15 @@ export default {
 </script>
 <template>
   <section :class="['wrapper', { wrapperActive: wrapperActive }]">
-    <button
+    <!-- <button
       @click="toggleOptions"
       :class="{
         ['btn']: true,
         [`ri-share-line`]: !wrapperActive,
         [`ri-close-line`]: wrapperActive,
       }"
-    >
-      <!-- <button
+    > -->
+    <button
       @click="toggleOptions"
       @blur="wrapperUnfocus"
       :class="{
@@ -53,7 +53,7 @@ export default {
         [`ri-share-line`]: !wrapperActive,
         [`ri-close-line`]: wrapperActive,
       }"
-    > -->
+    >
       <!-- <i class="ri-share-line"></i> -->
     </button>
     <ul class="wrapperList">
@@ -160,24 +160,29 @@ export default {
     > div {
       &.goTop {
         > .arrow {
-          animation: arrowAnimation 2s ease infinite;
+          animation: arrowAnimation 2s ease;
+          // animation: arrowAnimation 2s ease infinite;
         }
         > .line {
-          animation: lineAnimation 2s ease infinite;
+          animation: lineAnimation 2s ease;
+          // animation: lineAnimation 2s ease infinite;
         }
       }
       &.goBottom {
         > .arrow {
-          animation: downarrowAnimation 2s ease infinite;
+          animation: downarrowAnimation 2s ease;
+          // animation: downarrowAnimation 2s ease infinite;
         }
         > .line {
-          animation: downlineAnimation 2s ease infinite;
+          animation: downlineAnimation 2s ease;
+          // animation: downlineAnimation 2s ease infinite;
         }
       }
     }
     > img {
       &.navbarButton {
-        animation: NavbarAnimation 2s ease infinite;
+        animation: NavbarAnimation 2s ease;
+        // animation: NavbarAnimation 2s ease infinite;
       }
     }
   }
@@ -185,18 +190,22 @@ export default {
     > div {
       &.goTop {
         > .arrow {
-          animation: arrowActiveAnimation 2s ease infinite;
+          animation: arrowActiveAnimation 2s ease;
+          // animation: arrowActiveAnimation 2s ease infinite;
         }
         > .line {
-          animation: lineActiveAnimation 2s ease infinite;
+          animation: lineActiveAnimation 2s ease;
+          // animation: lineActiveAnimation 2s ease infinite;
         }
       }
       &.goBottom {
         > .arrow {
-          animation: downarrowActiveAnimation 2s ease infinite;
+          animation: downarrowActiveAnimation 2s ease;
+          // animation: downarrowActiveAnimation 2s ease infinite;
         }
         > .line {
-          animation: downlineActiveAnimation 2s ease infinite;
+          animation: downlineActiveAnimation 2s ease;
+          // animation: downlineActiveAnimation 2s ease infinite;
         }
       }
     }

@@ -1,7 +1,11 @@
 <script>
-import { onMounted, reactive } from "vue";
+import BookModal from "@/components/bookModal.vue";
+import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 export default {
+  components: {
+    BookModal,
+  },
   props: {
     foodArr: {
       type: Array,
@@ -14,6 +18,7 @@ export default {
     const stewArr = reactive({ data: [] });
     const stirfryArr = reactive({ data: [] });
     const coldArr = reactive({ data: [] });
+    const modalData = reactive({ data: [] });
     axios.get("https://ap9.ragic.com/lanziyun/forms/1?api").then((res) => {
       foodArr.data = res.data;
       foodArr.data = Object.keys(foodArr.data).map((key) => foodArr.data[key]);
@@ -26,7 +31,20 @@ export default {
       // console.log(foodArr.data);
       // console.log(friedArr.data);
     });
-    return { friedArr, stewArr, stirfryArr, coldArr };
+    const open = ref(false);
+    const toggleOpen = (data) => {
+      open.value = !open.value;
+      modalData.data = data;
+    };
+    return {
+      friedArr,
+      stewArr,
+      stirfryArr,
+      coldArr,
+      open,
+      toggleOpen,
+      modalData,
+    };
   },
 };
 </script>
@@ -47,14 +65,14 @@ export default {
                 v-for="item in friedArr.data"
                 :key="item._ragicId"
               >
-                <a class="catalog__item_a" href="#">
+                <button class="catalog__item_info" @click="toggleOpen(item)">
                   <article>
                     <h6>{{ item.nameeng }}</h6>
                     <p class="item__heading">{{ item.name }}</p>
                     <p class="item__text">{{ item.descript }}</p>
                   </article>
-                  <img :src="item.url" :alt="item.nameeng"
-                /></a>
+                  <img :src="item.url" :alt="item.nameeng" />
+                </button>
               </li>
             </ul>
           </article>
@@ -74,14 +92,14 @@ export default {
                 v-for="item in stewArr.data"
                 :key="item._ragicId"
               >
-                <a class="catalog__item_a" href="#">
+                <button class="catalog__item_info" @click="toggleOpen(item)">
                   <article>
                     <h6>{{ item.nameeng }}</h6>
                     <p class="item__heading">{{ item.name }}</p>
                     <p class="item__text">{{ item.descript }}</p>
                   </article>
-                  <img :src="item.url" :alt="item.nameeng"
-                /></a>
+                  <img :src="item.url" :alt="item.nameeng" />
+                </button>
               </li>
             </ul>
           </article>
@@ -101,14 +119,14 @@ export default {
                 v-for="item in stirfryArr.data"
                 :key="item._ragicId"
               >
-                <a class="catalog__item_a" href="#">
+                <button class="catalog__item_info" @click="toggleOpen(item)">
                   <article>
                     <h6>{{ item.nameeng }}</h6>
                     <p class="item__heading">{{ item.name }}</p>
                     <p class="item__text">{{ item.descript }}</p>
                   </article>
-                  <img :src="item.url" :alt="item.nameeng"
-                /></a>
+                  <img :src="item.url" :alt="item.nameeng" />
+                </button>
               </li>
             </ul>
           </article>
@@ -128,14 +146,14 @@ export default {
                 v-for="item in coldArr.data"
                 :key="item._ragicId"
               >
-                <a class="catalog__item_a" href="#">
+                <button class="catalog__item_info" @click="toggleOpen(item)">
                   <article>
                     <h6>{{ item.nameeng }}</h6>
                     <p class="item__heading">{{ item.name }}</p>
                     <p class="item__text">{{ item.descript }}</p>
                   </article>
-                  <img :src="item.url" :alt="item.nameeng"
-                /></a>
+                  <img :src="item.url" :alt="item.nameeng" />
+                </button>
               </li>
             </ul>
           </article>
@@ -143,6 +161,7 @@ export default {
       </article>
     </section>
   </section>
+  <BookModal :open="open" :toggleOpen="toggleOpen" :modalData="modalData" />
 </template>
 
 <style lang="scss">
@@ -206,32 +225,38 @@ export default {
   opacity: 1;
 }
 
-.catalog__item > .catalog__item_a > article {
-  display: none;
-  position: absolute;
-  bottom: 5%;
-  left: 20%;
-  color: #fff;
-  font-weight: 700;
-  z-index: 3;
-  white-space: nowrap;
-  text-align: center;
-  margin: 2rem auto;
-  min-width: 110px;
-  /* text-shadow:5px 5px 10px rgba(0, 0, 0, 1); */
-  text-shadow: -5px -5px 10px rgba(0, 0, 0, 1);
-  > p {
-    cursor: pointer;
+.catalog__item > .catalog__item_info {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  > article {
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+    color: #fff;
+    font-weight: 700;
+    z-index: 3;
+    white-space: nowrap;
+    text-align: center;
+    margin: 2rem auto;
+    min-width: 110px;
+    /* text-shadow:5px 5px 10px rgba(0, 0, 0, 1); */
+    text-shadow: -5px -5px 10px rgba(0, 0, 0, 1);
+    > p {
+      cursor: pointer;
+    }
   }
 }
 
-.catalog__item:hover .catalog__item_a > article {
+.catalog__item:hover .catalog__item_info > article {
   display: inline-block;
 }
 
 .item__heading {
   margin: 0;
   font-size: 2.2rem;
+  font-weight: 700;
 }
 
 .item__text {
@@ -256,7 +281,7 @@ export default {
 }
 
 @media screen and (max-width: 300px) {
-  div article .grid .catalog__item > .catalog__item_a > article {
+  div article .grid .catalog__item > .catalog__item_info > article {
     left: 0%;
   }
   article ul.grid {
@@ -264,7 +289,7 @@ export default {
   }
 }
 @media screen and (max-width: 350px) {
-  div article .grid .catalog__item > .catalog__item_a > article {
+  div article .grid .catalog__item > .catalog__item_info > article {
     left: 10%;
   }
 }
@@ -277,7 +302,7 @@ export default {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
-  article .grid .catalog__item > .catalog__item_a > article {
+  article .grid .catalog__item > .catalog__item_info > article {
     writing-mode: unset;
     left: 5%;
   }
@@ -295,7 +320,7 @@ export default {
 }
 
 @media screen and (max-width: 376px) {
-  article .grid .catalog__item > .catalog__item_a > article {
+  article .grid .catalog__item > .catalog__item_info > article {
     left: 0%;
   }
 }
@@ -323,7 +348,7 @@ export default {
   .item__text {
     display: none;
   }
-  .grid .catalog__item > .catalog__item_a > article {
+  .grid .catalog__item > .catalog__item_info > article {
     left: 24%;
     display: inline-block;
     writing-mode: vertical-lr;
@@ -331,13 +356,13 @@ export default {
 }
 
 @media screen and (max-width: 1350px) {
-  .catalog__item > .catalog__item_a > article {
+  .catalog__item > .catalog__item_info > article {
     left: 14%;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .catalog__item > .catalog__item_a > article {
+  .catalog__item > .catalog__item_info > article {
     left: 7%;
   }
 }
@@ -365,7 +390,7 @@ export default {
     height: 13.8888vw;
     width: 7.7777vw;
   }
-  .catalog__item > .catalog__item_a > article {
+  .catalog__item > .catalog__item_info > article {
     min-width: 7.63888vw;
     text-shadow: -0.347222vw -0.347222vw 0.69444vw rgba(0, 0, 0, 1);
   }

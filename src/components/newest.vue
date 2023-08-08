@@ -1,10 +1,15 @@
 <script>
-import { onMounted, reactive } from "vue";
+import BookModal from "@/components/bookModal.vue";
+import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 export default {
+  components: {
+    BookModal,
+  },
   setup() {
     const foodArr = reactive({ data: [] });
     const popularArr = reactive({ data: [] });
+    const modalData = reactive({ data: [] });
     axios
       .get("https://ap9.ragic.com/lanziyun/forms/1?api")
       .then((res) => {
@@ -27,7 +32,12 @@ export default {
       .catch((error) => {
         console.log(error);
       });
-    return { foodArr, popularArr };
+    const open = ref(false);
+    const toggleOpen = (data) => {
+      open.value = !open.value;
+      modalData.data = data;
+    };
+    return { foodArr, popularArr, open, toggleOpen, modalData };
   },
 };
 </script>
@@ -52,7 +62,7 @@ export default {
             v-for="item in popularArr.data"
             :key="item._ragicId"
           >
-            <a class="catalog__item_a" href="#">
+            <a class="catalog__item_a" @click="toggleOpen(item)">
               <img :src="item.url" :alt="item.nameeng" />
               <article>
                 <h6>{{ item.nameeng }}</h6>
@@ -65,6 +75,7 @@ export default {
       </article>
     </div>
   </section>
+  <BookModal :open="open" :toggleOpen="toggleOpen" :modalData="modalData" />
 </template>
 
 <style lang="scss" scoped>
