@@ -313,6 +313,7 @@ export default {
   }
   .grid img {
     height: 130px;
+    width: 100%;
   }
   .item__heading {
     font-size: 1.8rem;

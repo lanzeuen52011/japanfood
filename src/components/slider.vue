@@ -126,6 +126,11 @@ export default {
   color: #fff;
   opacity: 0.8;
 }
+@media screen and (max-width: 300px) {
+  .slider-container {
+    width: 100%;
+  }
+}
 
 @media screen and (min-width: 426px) {
   .slider-container {
