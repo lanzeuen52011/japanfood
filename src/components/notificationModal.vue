@@ -146,6 +146,23 @@ export default {
     transform: rotate(360deg);
   }
 }
+@media screen and (max-width: 768px) {
+  .notiModal__container {
+    left: 15%;
+    right: 15%;
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 425px) {
+  .lds_ring {
+    width: 150px;
+    height: 150px;
+  }
+  .lds_ring div {
+    width: 130px;
+    height: 130px;
+  }
+}
 
 // 驗證成功
 .lds_success {
@@ -216,6 +233,21 @@ export default {
   transform: rotate(225deg);
   top: 70px;
   left: -60px;
+}
+@media screen and (max-width: 425px) {
+  .lds_fail {
+    width: 150px;
+    height: 150px;
+  }
+  .lds_fail div {
+    width: 150px;
+    top: 50px;
+    left: 50px;
+  }
+  .lds_fail div:nth-child(3) {
+    top: 50px;
+    left: -70px;
+  }
 }
 
 .notiModal__close {

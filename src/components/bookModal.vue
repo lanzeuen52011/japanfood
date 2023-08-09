@@ -26,6 +26,7 @@ export default {
     const bookResult = ref(); // 訂購的處理結果
     const noticlass = ref(""); // 回傳給notification的訊息
     const borderRWD = ref(false);
+    let screenWidth = ref();
     var timer = null;
     let bookinfo = reactive([]);
     let bookjson = JSON.parse(localStorage.getItem("bookinfo"));
@@ -106,9 +107,11 @@ export default {
       } else {
         borderRWD.value = false;
       }
+      screenWidth.value = window.screen.availWidth;
     };
     onMounted(() => {
-      window.addEventListener("resize", handleRWD);
+      screenWidth.value = window.addEventListener("resize", handleRWD);
+      handleRWD();
     });
 
     onUnmounted(() => {
@@ -129,6 +132,7 @@ export default {
       noticlass,
       handleRWD,
       borderRWD,
+      screenWidth,
     };
   },
 };
@@ -283,6 +287,7 @@ export default {
     margin: 2rem;
     // width: 50%;
     width: 35%;
+    margin-top: 9rem;
   }
   > article {
     // width: 100%;
@@ -370,19 +375,28 @@ export default {
 
   .catalog__item_block {
     > .item__heading {
-      top: 40px;
+      top: 0;
     }
     > .modal_img {
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      margin-top: 3rem;
       object-fit: contain;
+    }
+    > article {
+      > .modal__text {
+        font-size: 1rem;
+      }
     }
   }
 }
 @media screen and (max-width: 663px) {
   .catalog__item_block {
-    > .item__heading {
-      top: 25px;
+    // > .item__heading {
+    //   top: 25px;
+    // }
+    > .modal_img {
+      margin-top: 2.5rem;
+      object-fit: contain;
     }
     > article {
       width: 90%;
@@ -397,6 +411,66 @@ export default {
     > .modal_img {
       width: 90%;
       height: auto;
+    }
+  }
+}
+@media screen and (min-width: 1600px) {
+  .border {
+    border: 0.06944444vw solid var(--color-member_page_background);
+    width: 2.083333vw;
+    height: 2.083333vw;
+    border-left: 0.034722222vw;
+    &.border__first {
+      border: 0.06944444vw solid var(--color-member_page_background);
+    }
+  }
+  .modal {
+    box-shadow: 0px 0px 0.6944444vw rgba(0, 0, 0, 0.2);
+    border-radius: 0.6944444vw;
+    > button {
+      padding: 0 0.6944444vw;
+      font-size: 2.083333vw;
+      height: 2.083333vw;
+    }
+  }
+  .catalog__item_block {
+    > .item__heading {
+      font-size: 2.7777777vw;
+      top: 1.3888888888vw;
+    }
+    > .modal_img {
+      margin: 1.3888888vw;
+      margin-top: 4.166665vw;
+      width: 35%;
+    }
+    > article {
+      width: 50%;
+    }
+  }
+
+  .bookNumber__container {
+    font-size: 1.25vw;
+    padding: 0 0.6944444vw 0.6944444vw;
+    > p {
+      padding: 0 0.6944444vw;
+    }
+    > button {
+      width: 3.125vw;
+      padding: 0.2083333vw 0.6944444vw;
+
+      > .bookNumber__cart {
+        > use {
+          scale: calc(0.00034722222 * v-bind(screenWidth));
+        }
+      }
+    }
+    > .bookNumber__control {
+      > input {
+        font-size: 1.25vw;
+      }
+      > .bookNumber__button {
+        padding: 0 0.6944444vw;
+      }
     }
   }
 }
