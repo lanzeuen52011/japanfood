@@ -23,7 +23,7 @@ export default {
         <p>不想出門？</p>
         <p>好懶！不想動？</p>
         <p>想吃好吃的？</p>
-        <a href="#">快點我訂位！</a>
+        <a href="#">點我訂餐！</a>
       </div>
     </article>
   </section>

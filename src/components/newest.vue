@@ -62,7 +62,10 @@ export default {
             v-for="item in popularArr.data"
             :key="item._ragicId"
           >
-            <a class="catalog__item_a" @click="toggleOpen(item)">
+            <a
+              class="catalog__item_a newest__opacity"
+              @click="toggleOpen(item)"
+            >
               <img :src="item.url" :alt="item.nameeng" />
               <article>
                 <h6>{{ item.nameeng }}</h6>
@@ -204,6 +207,10 @@ export default {
 }
 .catalog__item .catalog__item_a {
   opacity: 0.7;
+  &.newest__opacity {
+    cursor: pointer;
+    opacity: 1;
+  }
   &:hover {
     opacity: 1;
   }
