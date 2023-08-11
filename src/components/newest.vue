@@ -43,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <section class="newest__container container">
+  <section id="newest" class="newest__container container">
     <header class="head_container newest__head_container">
       <h2 class="newest__head head">私房新品</h2>
       <button class="newest__text">

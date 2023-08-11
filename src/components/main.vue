@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <section class="main__container container">
+  <section id="main" class="main__container container">
     <header>
       <h2 class="none">主看板</h2>
     </header>

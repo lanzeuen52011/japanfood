@@ -11,7 +11,7 @@ export default {
     <section class="concept__container">
       <header class="concept__head" data-aos="fade-right">料理理念</header>
       <p class="concept__text" data-aos="fade-right">
-        　　歡迎來到 LHC
+        　　歡迎來到 匠心料理
         日式餐廳，一個溫暖而美味的世界。在這裡，我們以精緻的料理和悉心的服務，呈現給您一場獨特的饗宴。每道菜品都蘊藏著傳統的烹飪技藝和對食材的敬意，每一口都彷彿帶您踏入了日本的風土人情。讓我們的料理喚起您對美食的熱愛，與親朋好友共享愉快的時光，感受來自東方的溫馨與美味。
       </p>
       <img class="concept__image" src="@/image/concept.webp" alt="image" />

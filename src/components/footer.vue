@@ -3,29 +3,29 @@ import { ref } from "vue";
 export default {
   setup() {
     const food = ref(false);
-    const event = ref(false);
-    const suggest = ref(false);
-    const about = ref(false);
+    const home = ref(false);
+    const member = ref(false);
+    const other = ref(false);
     const footerchevronToggle = (element) => {
       if (element === "food") {
         food.value = !food.value;
       }
-      if (element === "event") {
-        event.value = !event.value;
+      if (element === "home") {
+        home.value = !home.value;
       }
-      if (element === "suggest") {
-        suggest.value = !suggest.value;
+      if (element === "member") {
+        member.value = !member.value;
       }
-      if (element === "about") {
-        about.value = !about.value;
+      if (element === "other") {
+        other.value = !other.value;
       }
     };
     return {
       footerchevronToggle,
       food,
-      event,
-      suggest,
-      about,
+      home,
+      member,
+      other,
     };
   },
 };
@@ -38,26 +38,86 @@ export default {
         :class="[
           'collapsible',
           'footer__section',
+          { 'collapsible--expanded': home },
+        ]"
+      >
+        <div
+          class="collapsible__header footer__header"
+          @click="footerchevronToggle('home')"
+        >
+          <h2 class="collapsible__heading footer__heading footer__content">
+            匠心料理
+          </h2>
+          <svg class="collapsible__chevron footer__chevron">
+            <use xlink:href="@/image/chevron.svg#chevron"></use>
+          </svg>
+        </div>
+        <div class="collapsible__content footer__collapsible">
+          <ul class="list footer__list">
+            <li class="footer__content">
+              <router-link :to="{ path: '/', hash: '#main' }"
+                >形象官方</router-link
+              >
+            </li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/', hash: '#concept' }"
+                >料理理念</router-link
+              >
+            </li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/', hash: '#newest' }"
+                >私房新品</router-link
+              >
+            </li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/', hash: '#book' }"
+                >心動不如馬上行動！</router-link
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section
+        :class="[
+          'collapsible',
+          'footer__section',
           { 'collapsible--expanded': food },
         ]"
       >
-        <div class="collapsible__header footer__header">
+        <div
+          class="collapsible__header footer__header"
+          @click="footerchevronToggle('food')"
+        >
           <h2 class="collapsible__heading footer__heading footer__content">
-            食譜分類
+            私房菜單
           </h2>
-          <svg
-            class="collapsible__chevron footer__chevron"
-            @click="footerchevronToggle('food')"
-          >
+          <svg class="collapsible__chevron footer__chevron">
             <use xlink:href="@/image/chevron.svg#chevron"></use>
           </svg>
         </div>
         <div class="collapsible__content footer__collapsible">
           <ul class="list footer__list">
-            <li class="footer__content"><a href="#">炸物類</a></li>
-            <li class="footer__content"><a href="#">煎炒類</a></li>
-            <li class="footer__content"><a href="#">燉煮類</a></li>
-            <li class="footer__content"><a href="#">冷盤類</a></li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/menu', hash: '#fried' }"
+                >炸物類</router-link
+              >
+            </li>
+
+            <li class="footer__content">
+              <router-link :to="{ path: '/menu', hash: '#stew' }"
+                >燉煮類</router-link
+              >
+            </li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/menu', hash: '#stirfry' }"
+                >煎炒類</router-link
+              >
+            </li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/menu', hash: '#cold' }"
+                >冷盤類</router-link
+              >
+            </li>
           </ul>
         </div>
       </section>
@@ -65,26 +125,34 @@ export default {
         :class="[
           'collapsible',
           'footer__section',
-          { 'collapsible--expanded': event },
+          { 'collapsible--expanded': member },
         ]"
       >
-        <div class="collapsible__header footer__header">
+        <div
+          class="collapsible__header footer__header"
+          @click="footerchevronToggle('member')"
+        >
           <h2 class="collapsible__heading footer__heading footer__content">
-            活動參予
+            會員專區
           </h2>
-          <svg
-            class="collapsible__chevron footer__chevron"
-            @click="footerchevronToggle('event')"
-          >
+          <svg class="collapsible__chevron footer__chevron">
             <use xlink:href="@/image/chevron.svg#chevron"></use>
           </svg>
         </div>
         <div class="collapsible__content footer__collapsible">
           <ul class="list footer__list">
-            <li class="footer__content"><a href="#">廚力教學</a></li>
-            <li class="footer__content"><a href="#">廚力滿點通識</a></li>
-            <li class="footer__content"><a href="#">廚藝比賽投稿</a></li>
-            <li class="footer__content"><a href="#">清寒廚力教學贊助</a></li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/member' }">活動通知</router-link>
+            </li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/member' }">私房技巧</router-link>
+            </li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/member' }">查看折價券</router-link>
+            </li>
+            <li class="footer__content">
+              <router-link :to="{ path: '/member' }">會員大好禮</router-link>
+            </li>
           </ul>
         </div>
       </section>
@@ -92,52 +160,31 @@ export default {
         :class="[
           'collapsible',
           'footer__section',
-          { 'collapsible--expanded': suggest },
+          { 'collapsible--expanded': other },
         ]"
       >
-        <div class="collapsible__header footer__header">
+        <div
+          class="collapsible__header footer__header"
+          @click="footerchevronToggle('other')"
+        >
           <h2 class="collapsible__heading footer__heading footer__content">
-            推薦廚具
+            其他網站
           </h2>
-          <svg
-            class="collapsible__chevron footer__chevron"
-            @click="footerchevronToggle('suggest')"
-          >
+          <svg class="collapsible__chevron footer__chevron">
             <use xlink:href="@/image/chevron.svg#chevron"></use>
           </svg>
         </div>
         <div class="collapsible__content footer__collapsible">
-          <ul class="list footer__list">
-            <li class="footer__content"><a href="#">刀具</a></li>
-            <li class="footer__content"><a href="#">鍋子</a></li>
-            <li class="footer__content"><a href="#">盤子</a></li>
-            <li class="footer__content"><a href="#">碗與其他類</a></li>
-          </ul>
-        </div>
-      </section>
-      <section
-        :class="[
-          'collapsible',
-          'footer__section',
-          { 'collapsible--expanded': about },
-        ]"
-      >
-        <div class="collapsible__header footer__header">
-          <h2 class="collapsible__heading footer__heading footer__content">
-            關於我們
-          </h2>
-          <svg
-            class="collapsible__chevron footer__chevron"
-            @click="footerchevronToggle('about')"
-          >
-            <use xlink:href="@/image/chevron.svg#chevron"></use>
-          </svg>
-        </div>
-        <div class="collapsible__content footer__collapsible">
-          <ul class="list footer__list">
-            <li class="footer__content"><a href="#">了解我們</a></li>
-            <li class="footer__content"><a href="#">聯絡我們</a></li>
-            <li class="footer__content"><a href="#">參觀我們</a></li>
+          <ul class="list footer__list noPadding">
+            <li class="footer__content">
+              <a href="https://draw-ai.netlify.app/">
+                <img
+                  class="other__logo footer__other__logo"
+                  src="@/image/drawailogo.png"
+                  alt=""
+                />
+              </a>
+            </li>
           </ul>
         </div>
       </section>
@@ -234,6 +281,14 @@ export default {
   letter-spacing: 0.05rem;
 }
 
+img.other__logo.footer__other__logo {
+  width: 100%;
+  min-width: 100px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 0px;
+}
+
 @media screen and (min-width: 1440px) {
   .footer__background {
     padding: 1.38888vw 1.38888vw 3.472222vw;
@@ -259,6 +314,10 @@ export default {
     .footer__copyright {
       font-size: 1.0416666vw;
     }
+  }
+  img.other__logo.footer__other__logo {
+    min-width: 7vw;
+    height: 4.166vw;
   }
 }
 
@@ -322,10 +381,26 @@ export default {
   .footer__container {
     max-width: 1140px;
   }
+  .footer__content {
+    a {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  img.other__logo.footer__other__logo {
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 @media screen and (max-width: 768px) {
   .footer__brand {
     margin-top: 0;
+  }
+  .noPadding {
+    padding: 0;
   }
 }
 

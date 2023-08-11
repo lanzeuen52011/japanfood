@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <section class="container">
+  <section id="book" class="container">
     <article>
       <video class="book__article-backgroundVideo" autoplay loop muted>
         <source
