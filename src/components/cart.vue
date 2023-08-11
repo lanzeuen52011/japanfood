@@ -32,7 +32,6 @@ export default {
 
     if (bookjson.length >= 1) {
       bookinfo = bookjson;
-      console.log(bookinfo);
       hasBook.value = true;
 
       // 計算總價(放在這裡是因為，購物車有東西，才需要計算價格)
@@ -40,6 +39,8 @@ export default {
         (accumulator, current) => accumulator + current.price,
         0
       );
+    } else {
+      totalAmount = 0;
     }
 
     // 單品數量增加
