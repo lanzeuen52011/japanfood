@@ -270,6 +270,7 @@ export default {
   margin-bottom: 1.5rem;
   padding: 0.5rem 2rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  min-height: 360px;
 }
 
 .grid ul {
@@ -410,6 +411,7 @@ export default {
     margin-bottom: 1.041666vw;
     padding: 0.347222vw 1.388888vw;
     box-shadow: 0.347222vw 0.347222vw 0.694444vw rgba(0, 0, 0, 0.2);
+    min-height: 26vw;
   }
   .grid ul {
     border-bottom: 0.13888vw dotted var(--color-categoreis_item_tags);

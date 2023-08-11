@@ -108,6 +108,7 @@ export default {
   margin: calc(var(--var-first_for_navbar) + 3rem) auto 3rem;
   // border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  min-height: 210px;
   // z-index: -1;
   &.container {
     justify-content: center;
@@ -144,6 +145,9 @@ export default {
     width: 768px;
     // margin: 15rem auto 7rem;
     margin: calc(var(--var-first_for_navbar) + 7rem) auto 7rem;
+    &.container {
+      min-height: 560px;
+    }
   }
   // .container {
   //   margin: 5rem auto;
@@ -154,6 +158,9 @@ export default {
 @media screen and (min-width: 1024px) {
   .slider-container {
     width: 1024px;
+    &.container {
+      min-height: 730px;
+    }
   }
 }
 @media screen and (min-width: 1440px) {
@@ -161,6 +168,9 @@ export default {
     width: 71.11111111111111vw;
     // margin: 10.41666vw auto 6.9444444vw;
     margin: calc(var(--var-first_for_navbar) + 4.86111vw) auto 6.9444444vw;
+    &.container {
+      min-height: 52vw;
+    }
   }
 }
 
