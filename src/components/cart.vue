@@ -191,7 +191,7 @@ export default {
         </td>
         <button class="cart__del" @click="Del(index)">x</button>
       </tr>
-      <tr class="cart__list__item">
+      <tr class="cart__list__item" v-show="hasBook">
         <td class="input-group">
           <input
             type="text"

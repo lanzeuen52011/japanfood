@@ -23,7 +23,7 @@ export default {
         <p>不想出門？</p>
         <p>好懶！不想動？</p>
         <p>想吃好吃的？</p>
-        <a href="#">點我訂餐！</a>
+        <router-link :to="{ path: '/menu' }">點我訂餐！</router-link>
       </div>
     </article>
   </section>

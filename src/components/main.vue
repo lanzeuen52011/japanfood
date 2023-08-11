@@ -32,6 +32,7 @@ export default {
         :to="{ path: '/', hash: '#concept' }"
       >
         <img src="@/image/arrow.png" alt="" />
+        <p style="display: none">往下</p>
       </router-link>
     </div>
     <div class="main__image">

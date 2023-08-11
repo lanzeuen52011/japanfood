@@ -63,17 +63,17 @@ export default {
             :key="item._ragicId"
             data-aos="flip-left"
           >
-            <a
+            <div
               class="catalog__item_a newest__opacity"
               @click="toggleOpen(item)"
             >
-              <img :src="item.url" :alt="item.nameeng" />
+              <img :src="item.url" loading="lazy" :alt="item.nameeng" />
               <article>
                 <h6>{{ item.nameeng }}</h6>
                 <p class="item__heading">{{ item.name }}</p>
                 <p class="item__text">{{ item.longdescript }}</p>
-              </article></a
-            >
+              </article>
+            </div>
           </li>
         </ul>
       </article>

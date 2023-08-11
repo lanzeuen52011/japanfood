@@ -46,6 +46,7 @@ export default {
       }"
     > -->
     <button
+      title="輔助功能"
       data-tooltip="輔助功能，含有回到最上面、去到最下面、導覽列開關"
       @click="toggleOptions"
       @blur="wrapperUnfocus"
@@ -60,7 +61,7 @@ export default {
     </button>
     <ul class="wrapperList">
       <li class="item">
-        <button @click="goBottom" class="link sc">
+        <button title="到最底部" @click="goBottom" class="link sc">
           <!-- <i class="ri-snapchat-line"></i> -->
           <div class="goBottom">
             <svg class="arrow">
@@ -71,7 +72,12 @@ export default {
         </button>
       </li>
       <li class="item">
-        <button @click="goTop" class="link ig" style="--d: 0.05s">
+        <button
+          title="到最上方"
+          @click="goTop"
+          class="link ig"
+          style="--d: 0.05s"
+        >
           <!-- <i class="ri-instagram-line"></i> -->
           <div class="goTop">
             <svg class="arrow">
@@ -82,7 +88,7 @@ export default {
         </button>
       </li>
       <li class="item" style="--d: 0.1s">
-        <button @click="props.handleNavbar" class="link tw">
+        <button title="導覽開關" @click="props.handleNavbar" class="link tw">
           <!-- <i class="ri-twitter-line"></i> -->
           <img
             class="navbarButton"
