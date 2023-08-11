@@ -18,20 +18,17 @@ const routes = [
         //此處為點入About時，首先載入的嵌套內容。
         path: "/menu",
         name: "menu",
-        component: () =>
-          import(/* webpackChunkName: "about" */ "@/views/child/Menu.vue"),
+        component: () => import("@/views/child/Menu.vue"),
       },
-      {
-        path: "/about",
-        name: "about",
-        component: () =>
-          import(/* webpackChunkName: "about" */ "@/views/child/About.vue"),
-      },
+      // {
+      //   path: "/about",
+      //   name: "about",
+      //   component: () => import("@/views/child/About.vue"),
+      // },
       {
         path: "/member",
         name: "member",
-        component: () =>
-          import(/* webpackChunkName: "about" */ "@/views/child/Member.vue"),
+        component: () => import("@/views/child/Member.vue"),
       },
       {
         path: "/cart",

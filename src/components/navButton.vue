@@ -46,10 +46,12 @@ export default {
       }"
     > -->
     <button
+      data-tooltip="輔助功能，含有回到最上面、去到最下面、導覽列開關"
       @click="toggleOptions"
       @blur="wrapperUnfocus"
       :class="{
         ['btn']: true,
+        ['custom-tooltip']: true,
         [`ri-share-line`]: !wrapperActive,
         [`ri-close-line`]: wrapperActive,
       }"
@@ -94,6 +96,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+// 輔助說明位置調整
+.custom-tooltip::after {
+  left: 30%;
+}
 /* General styles end */
 .wrapper {
   position: fixed;

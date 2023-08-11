@@ -61,6 +61,7 @@ export default {
             class="catalog__item"
             v-for="item in popularArr.data"
             :key="item._ragicId"
+            data-aos="flip-left"
           >
             <a
               class="catalog__item_a newest__opacity"

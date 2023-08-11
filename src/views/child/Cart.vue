@@ -1,11 +1,9 @@
 <script>
-import Catalog from "@/components/catalog.vue";
-import BookModal from "@/components/bookModal.vue";
+import Cart from "@/components/cart.vue";
 
 export default {
   components: {
-    Catalog,
-    BookModal,
+    Cart,
   },
   setup() {
     return {};
@@ -13,4 +11,6 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <Cart />
+</template>

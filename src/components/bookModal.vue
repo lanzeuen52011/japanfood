@@ -32,9 +32,9 @@ export default {
     let bookjson = JSON.parse(localStorage.getItem("bookinfo"));
 
     if (bookjson != null) {
-      console.log(bookjson.length);
+      // console.log(bookjson.length);
       bookinfo = bookjson;
-      console.log(bookinfo);
+      // console.log(bookinfo);
     }
 
     const bookItem = (item) => {
@@ -54,6 +54,7 @@ export default {
             // 有相同商品就加在一起
             if (element.goods == item._ragicId) {
               element.quantity += bookNumber.value;
+              element.price = item.price * element.quantity;
               return true;
             }
           });
@@ -61,14 +62,24 @@ export default {
             // 沒相同商品就新增商品種類
             bookinfo[bookinfo.length] = {
               goods: item._ragicId,
+              name: item.name,
+              nameeng: item.nameeng,
+              desc: item.descript,
+              img: item.url,
               quantity: bookNumber.value,
+              price: bookNumber.value * item.price,
             };
           }
         } else {
           // 原本沒有訂單的話，就創造新訂單
           bookinfo[bookinfo.length] = {
             goods: item._ragicId,
+            name: item.name,
+            nameeng: item.nameeng,
+            desc: item.descript,
+            img: item.url,
             quantity: bookNumber.value,
+            price: bookNumber.value * item.price,
           };
         }
         // 存到LocalStorage
@@ -158,8 +169,9 @@ export default {
           <h6>{{ props.modalData.data.nameeng }}</h6>
           <form action="" class="bookNumber__container">
             <button
+              data-tooltip="加入購物車！"
               @click.prevent="bookItem(props.modalData.data)"
-              class="border border__first"
+              class="border border__first custom-tooltip"
             >
               <svg class="bookNumber__cart">
                 <use xlink:href="@/image/cart.svg#cart"></use>
@@ -213,16 +225,7 @@ export default {
 //   width: 1300px;
 //   height: 800px;
 // }
-.border {
-  border: 1px solid var(--color-member_page_background);
-  background: 0;
-  width: 30px;
-  height: 30px;
-  border-left: 0.5px;
-  &.border__first {
-    border: 1px solid var(--color-member_page_background);
-  }
-}
+
 .modal__background {
   width: 100vw;
   height: 100vh;
@@ -415,15 +418,6 @@ export default {
   }
 }
 @media screen and (min-width: 1600px) {
-  .border {
-    border: 0.06944444vw solid var(--color-member_page_background);
-    width: 2.083333vw;
-    height: 2.083333vw;
-    border-left: 0.034722222vw;
-    &.border__first {
-      border: 0.06944444vw solid var(--color-member_page_background);
-    }
-  }
   .modal {
     box-shadow: 0px 0px 0.6944444vw rgba(0, 0, 0, 0.2);
     border-radius: 0.6944444vw;

@@ -48,6 +48,31 @@ body {
   }
 }
 
+// 輔助說明，hover按鈕時，會跳出說明(自製說明，可參考bookModal.vue的，data-tooltip="加入購物車！"，來參考使用)
+.custom-tooltip {
+  position: relative;
+}
+
+.custom-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  width: 210%;
+}
+
+.custom-tooltip:hover::after {
+  opacity: 1;
+}
+
 /*Typographiy*/
 
 *,
@@ -146,6 +171,18 @@ p {
 li {
   list-style: none;
 }
+
+.border {
+  border: 1px solid var(--color-member_page_background);
+  background: 0;
+  width: 30px;
+  height: 30px;
+  border-left: 0.5px;
+  &.border__first {
+    border: 1px solid var(--color-member_page_background);
+  }
+}
+
 @media screen and (min-width: 1600px) {
   body {
     font-size: 1.6666vw;
@@ -182,6 +219,15 @@ li {
 
   .head_container {
     padding: 2.0833vw 2.777777777vw 0.69444444vw;
+  }
+  .border {
+    border: 0.06944444vw solid var(--color-member_page_background);
+    width: 2.083333vw;
+    height: 2.083333vw;
+    border-left: 0.034722222vw;
+    &.border__first {
+      border: 0.06944444vw solid var(--color-member_page_background);
+    }
   }
 }
 // #app {
