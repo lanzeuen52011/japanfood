@@ -54,37 +54,107 @@ export default {
       :slides-per-view="1"
     >
       <!-- :autoplay="{延遲2秒,當滑鼠進到swiper時停止滑動,按過選項後仍然持續自動輪播}" -->
-      <swiper-slide
-        ><img
+      <swiper-slide>
+        <picture>
+          <img
+            sizes="(max-width: 1920px) 100vw, 1920px"
+            srcset="
+              @/image/swiper/food1@1x.webp  300w,
+              @/image/swiper/food1@2x.webp  750w,
+              @/image/swiper/food1@3x.webp 1080w,
+              @/image/swiper/food1@4x.webp 1920w
+            "
+            src="@/image/swiper/food1@4x.webp"
+            alt="swiper1"
+          />
+        </picture>
+        <!-- <img
           class="image_slider swiper-slide"
-          src="@/image/food1.webp"
+          src="@/image/swiper/food1@1x.webp"
           alt="image"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
+      /> -->
+      </swiper-slide>
+      <swiper-slide>
+        <picture>
+          <img
+            sizes="(max-width: 1920px) 100vw, 1920px"
+            srcset="
+              @/image/swiper/food2@1x.webp  300w,
+              @/image/swiper/food2@2x.webp  750w,
+              @/image/swiper/food2@3x.webp 1080w,
+              @/image/swiper/food2@4x.webp 1920w
+            "
+            src="@/image/swiper/food2@4x.webp"
+            alt="swiper1"
+          />
+        </picture>
+        <!-- <img
           class="image_slider swiper-slide"
           src="@/image/food2.webp"
           alt="image"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
+      /> -->
+      </swiper-slide>
+      <swiper-slide>
+        <picture>
+          <img
+            sizes="(max-width: 1920px) 100vw, 1920px"
+            srcset="
+              @/image/swiper/food3@1x.webp  300w,
+              @/image/swiper/food3@2x.webp  750w,
+              @/image/swiper/food3@3x.webp 1080w,
+              @/image/swiper/food3@4x.webp 1920w
+            "
+            src="@/image/swiper/food3@4x.webp"
+            alt="swiper1"
+          />
+        </picture>
+        <!-- <img
           class="image_slider swiper-slide"
           src="@/image/food3.webp"
           alt="image"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
+      /> -->
+      </swiper-slide>
+      <swiper-slide>
+        <picture>
+          <img
+            sizes="(max-width: 1920px) 100vw, 1920px"
+            srcset="
+              @/image/swiper/food4@1x.webp  300w,
+              @/image/swiper/food4@2x.webp  750w,
+              @/image/swiper/food4@3x.webp 1080w,
+              @/image/swiper/food4@4x.webp 1920w
+            "
+            src="@/image/swiper/food4@4x.webp"
+            alt="swiper1"
+          />
+        </picture>
+        <!-- <img
           class="image_slider swiper-slide"
           src="@/image/food4.webp"
           alt="image"
-      /></swiper-slide>
-      <swiper-slide
-        ><img
+      /> -->
+      </swiper-slide>
+      <swiper-slide>
+        <picture>
+          <img
+            sizes="(max-width: 1920px) 100vw, 1920px"
+            srcset="
+              @/image/swiper/food5@1x.webp  300w,
+              @/image/swiper/food5@2x.webp  750w,
+              @/image/swiper/food5@3x.webp 1080w,
+              @/image/swiper/food5@4x.webp 1920w
+            "
+            src="@/image/swiper/food5@4x.webp"
+            alt="swiper1"
+          />
+        </picture>
+        <!-- <img
           class="image_slider swiper-slide"
           src="@/image/food5.webp"
           alt="image"
-      /></swiper-slide>
-      ...
+      /> -->
+      </swiper-slide>
+      <!-- ... -->
     </swiper>
   </section>
 </template>
@@ -121,6 +191,7 @@ export default {
   display: block;
   display: flex;
   transition: transform 0.4s ease-in-out;
+  line-height: 0;
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -169,7 +240,7 @@ export default {
     // margin: 10.41666vw auto 6.9444444vw;
     margin: calc(var(--var-first_for_navbar) + 4.86111vw) auto 6.9444444vw;
     &.container {
-      min-height: 52vw;
+      min-height: 51vw;
     }
   }
 }

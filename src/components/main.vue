@@ -36,7 +36,21 @@ export default {
       </router-link>
     </div>
     <div class="main__image">
-      <img class="main__background" src="@/image/main.webp" alt="image" />
+      <!-- <img class="main__background" src="@/image/main.webp" alt="image" /> -->
+      <picture>
+        <img
+          class="main__background"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          srcset="
+            @/image/main@1x.webp  300w,
+            @/image/main@2x.webp  750w,
+            @/image/main@3x.webp 1080w,
+            @/image/main@4x.webp 1920w
+          "
+          loading="lazy"
+          alt="main"
+        />
+      </picture>
     </div>
   </section>
 </template>

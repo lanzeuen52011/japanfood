@@ -51,7 +51,10 @@ export default {
     <h1>Let Him Cook</h1>
     <nav :class="['navbar', { hide: scrollingdown }]">
       <router-link :class="['navbar__a']" to="/"
-        ><img class="logo navbar__logo" src="@/image/LetHimCook1.png" alt=""
+        ><img
+          class="logo navbar__logo"
+          src="@/image/LetHimCook1.png"
+          alt="首頁"
       /></router-link>
       <div
         :class="[

@@ -181,7 +181,7 @@ export default {
                 <img
                   class="other__logo footer__other__logo"
                   src="@/image/drawailogo.png"
-                  alt=""
+                  alt="AI畫廊DrawAI"
                 />
               </a>
             </li>

@@ -66,6 +66,7 @@ export default {
 }
 /* ======================== */
 /* General styles */
+
 button,
 input {
   font: inherit;

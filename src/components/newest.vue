@@ -67,7 +67,19 @@ export default {
               class="catalog__item_a newest__opacity"
               @click="toggleOpen(item)"
             >
-              <img :src="item.url" loading="lazy" :alt="item.nameeng" />
+              <picture>
+                <img
+                  sizes="(max-width: 1920px) 100vw, 1920px"
+                  :srcset="`
+                    ${item.urlsmall}  300w,
+                    ${item.urlmid}    750w,
+                    ${item.url}      1080w,
+                    ${item.urllarge} 1920w`"
+                  loading="lazy"
+                  :alt="item.nameeng"
+                />
+              </picture>
+              <!-- <img :src="item.url" loading="lazy" :alt="item.nameeng" /> -->
               <article>
                 <h6>{{ item.nameeng }}</h6>
                 <p class="item__heading">{{ item.name }}</p>
