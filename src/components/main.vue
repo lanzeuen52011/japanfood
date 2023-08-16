@@ -61,9 +61,10 @@ export default {
             @/image/main@1x.webp  300w,
             @/image/main@2x.webp  750w,
             @/image/main@3x.webp 1080w,
-            @/image/main@4x.webp 1920w,
-            @/image/main@5x.webp 2560w,
-            @/image/main@6x.webp 2800w
+            @/image/main@4x.webp 1600w,
+            @/image/main@5x.webp 1920w,
+            @/image/main@6x.webp 2560w,
+            @/image/main@7x.webp 2800w
           "
           loading="lazy"
           alt="main"
