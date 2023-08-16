@@ -15,6 +15,16 @@ export default {
           type="video/mp4"
           alt="cottonbro studio 拍攝的影片: https://www.pexels.com/zh-tw/video/3297825/"
         />
+        <source
+          src="@/video/backward_sushi_1080.webm"
+          type="video/webm"
+          alt="cottonbro studio 拍攝的影片: https://www.pexels.com/zh-tw/video/3297825/"
+        />
+        <!-- <source
+          src="@/video/backward_sushi_1080.ogv"
+          type="video/ogv"
+          alt="cottonbro studio 拍攝的影片: https://www.pexels.com/zh-tw/video/3297825/"
+        /> -->
       </video>
       <header class="head_container">
         <h2 class="head">心動不如馬上行動！</h2>
