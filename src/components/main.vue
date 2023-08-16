@@ -66,7 +66,6 @@ export default {
             @/image/main@6x.webp 2560w,
             @/image/main@7x.webp 2800w
           "
-          loading="lazy"
           alt="main"
         />
       </picture>
