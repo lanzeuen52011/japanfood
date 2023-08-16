@@ -40,7 +40,7 @@ export default {
           srcset="
             @/image/concept@1x.webp  300w,
             @/image/concept@2x.webp  800w,
-            @/image/concept@3x.webp 1080w,
+            @/image/concept@3x.webp 1200w,
             @/image/concept@4x.webp 1600w,
             @/image/concept@5x.webp 1920w,
             @/image/concept@6x.webp 2560w,
