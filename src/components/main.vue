@@ -31,7 +31,7 @@ export default {
         class="main__anime-arrow animation-lineu2d"
         :to="{ path: '/', hash: '#concept' }"
       >
-        <img src="@/image/arrow.png" alt="" />
+        <img src="@/image/arrow.png" alt="Arrow-direction" />
         <p style="display: none">往下</p>
       </router-link>
     </div>
@@ -45,7 +45,9 @@ export default {
             @/image/main@1x.webp  300w,
             @/image/main@2x.webp  750w,
             @/image/main@3x.webp 1080w,
-            @/image/main@4x.webp 1920w
+            @/image/main@4x.webp 1920w,
+            @/image/main@5x.webp 2560w,
+            @/image/main@6x.webp 2800w
           "
           loading="lazy"
           alt="main"

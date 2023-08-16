@@ -71,10 +71,8 @@ export default {
                 <img
                   sizes="(max-width: 1920px) 100vw, 1920px"
                   :srcset="`
-                    ${item.urlsmall}  300w,
-                    ${item.urlmid}    750w,
-                    ${item.url}      1080w,
-                    ${item.urllarge} 1920w`"
+                    ${item.urlsmall}  1100w,
+                    ${item.urlmid}    2560w,`"
                   loading="lazy"
                   :alt="item.nameeng"
                 />

@@ -14,7 +14,7 @@ export default {
         　　歡迎來到 匠心料理
         日式餐廳，一個溫暖而美味的世界。在這裡，我們以精緻的料理和悉心的服務，呈現給您一場獨特的饗宴。每道菜品都蘊藏著傳統的烹飪技藝和對食材的敬意，每一口都彷彿帶您踏入了日本的風土人情。讓我們的料理喚起您對美食的熱愛，與親朋好友共享愉快的時光，感受來自東方的溫馨與美味。
       </p>
-      <picture>
+      <picture class="concept__image__container">
         <img
           class="concept__image"
           sizes="(max-width: 1920px) 100vw, 1920px"
@@ -22,7 +22,9 @@ export default {
             @/image/concept@1x.webp  300w,
             @/image/concept@2x.webp  750w,
             @/image/concept@3x.webp 1080w,
-            @/image/concept@4x.webp 1920w
+            @/image/concept@4x.webp 1920w,
+            @/image/concept@5x.webp 2560w,
+            @/image/concept@6x.webp 2800w
           "
           loading="lazy"
           alt="concept"
@@ -76,11 +78,15 @@ export default {
   letter-spacing: 0.1rem;
   cursor: default;
 }
+.concept__image__container {
+  line-height: 0;
+}
 .concept__image {
   min-height: 100vh;
   object-fit: cover;
   width: 100%;
   position: relative;
+  min-width: 100vw;
   // right: 50px;
   z-index: 0;
 }
