@@ -1,7 +1,22 @@
 <script>
+import { onMounted, ref } from "vue";
 export default {
   setup() {
-    return {};
+    let screenWidth = ref(window.screen.availWidth);
+    let screenHeight = ref(window.screen.availHeight);
+    const handleWidth = () => {
+      screenWidth.value = window.screen.availWidth;
+    };
+    const handleHeight = () => {
+      screenHeight.value = window.screen.availHeight;
+    };
+    onMounted(() => {
+      screenWidth.value = window.addEventListener("resize", handleWidth);
+      screenHeight.value = window.addEventListener("resize", handleHeight);
+      handleWidth();
+      handleHeight();
+    });
+    return { screenWidth, screenHeight };
   },
 };
 </script>
@@ -40,7 +55,8 @@ export default {
       <picture>
         <img
           class="main__background"
-          sizes="(max-width: 1920px) 100vw, 1920px"
+          :sizes="screenWidth"
+          :style="[`width: ${screenWidth}px;`, `height:${screenHeight}px;`]"
           srcset="
             @/image/main@1x.webp  300w,
             @/image/main@2x.webp  750w,
