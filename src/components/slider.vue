@@ -60,7 +60,7 @@ export default {
             sizes="(max-width: 1920px) 100vw, 1920px"
             srcset="
               @/image/swiper/food1@1x.webp  300w,
-              @/image/swiper/food1@2x.webp  750w,
+              @/image/swiper/food1@2x.webp  800w,
               @/image/swiper/food1@3x.webp 1080w,
               @/image/swiper/food1@4x.webp 1920w
             "
@@ -80,7 +80,7 @@ export default {
             sizes="(max-width: 1920px) 100vw, 1920px"
             srcset="
               @/image/swiper/food2@1x.webp  300w,
-              @/image/swiper/food2@2x.webp  750w,
+              @/image/swiper/food2@2x.webp  800w,
               @/image/swiper/food2@3x.webp 1080w,
               @/image/swiper/food2@4x.webp 1920w
             "
@@ -100,7 +100,7 @@ export default {
             sizes="(max-width: 1920px) 100vw, 1920px"
             srcset="
               @/image/swiper/food3@1x.webp  300w,
-              @/image/swiper/food3@2x.webp  750w,
+              @/image/swiper/food3@2x.webp  800w,
               @/image/swiper/food3@3x.webp 1080w,
               @/image/swiper/food3@4x.webp 1920w
             "
@@ -120,7 +120,7 @@ export default {
             sizes="(max-width: 1920px) 100vw, 1920px"
             srcset="
               @/image/swiper/food4@1x.webp  300w,
-              @/image/swiper/food4@2x.webp  750w,
+              @/image/swiper/food4@2x.webp  800w,
               @/image/swiper/food4@3x.webp 1080w,
               @/image/swiper/food4@4x.webp 1920w
             "
@@ -140,7 +140,7 @@ export default {
             sizes="(max-width: 1920px) 100vw, 1920px"
             srcset="
               @/image/swiper/food5@1x.webp  300w,
-              @/image/swiper/food5@2x.webp  750w,
+              @/image/swiper/food5@2x.webp  800w,
               @/image/swiper/food5@3x.webp 1080w,
               @/image/swiper/food5@4x.webp 1920w
             "
