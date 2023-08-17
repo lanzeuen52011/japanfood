@@ -118,6 +118,7 @@ export default {
   }
   nav.navbar .navbar__logo {
     width: 19.4vw;
+    height: auto;
   }
 }
 
@@ -151,6 +152,7 @@ a {
   display: flex;
   height: inherit;
   object-fit: cover;
+  height: 80px;
 }
 
 .navbar__list {

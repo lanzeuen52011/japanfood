@@ -270,7 +270,8 @@ export default {
   > img {
     &.navbarButton {
       position: relative;
-      width: 100%;
+      width: 38px;
+      height: 38px;
     }
   }
 }

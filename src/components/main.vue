@@ -80,6 +80,7 @@ export default {
 }
 .main__article__container {
   min-height: 100vh;
+  height: auto;
 }
 .main__article {
   padding-top: 1.5rem;
@@ -145,6 +146,10 @@ export default {
   position: relative;
   top: 15px;
   cursor: pointer;
+  > img {
+    width: 25px;
+    height: 25px;
+  }
 }
 .main__anime-text:visited {
   color: #fff;
