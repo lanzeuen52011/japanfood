@@ -1,7 +1,26 @@
 <script>
+import { onMounted, ref } from "vue";
 export default {
   setup() {
-    return {};
+    let preload = ref("none");
+    let autoplay = ref(false);
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollBottom = window.pageYOffset + window.innerHeight;
+      // 以下註解為測試用
+      // console.log("總長度：", scrollHeight, "現在位置：", scrollBottom);
+      if (scrollBottom / scrollHeight >= 0.6) {
+        // 手動製作影片的lazyload
+        preload.value = "auto";
+        autoplay.value = true;
+        // 一旦滿足條件，移除 scroll 事件監聽器
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+    onMounted(() => {
+      window.addEventListener("scroll", handleScroll);
+    });
+    return { preload, autoplay };
   },
 };
 </script>
@@ -9,7 +28,15 @@ export default {
 <template>
   <section id="book" class="container">
     <article>
-      <video class="book__article-backgroundVideo" autoplay loop muted>
+      <video
+        class="book__article-backgroundVideo"
+        loop
+        muted
+        playsinline
+        :preload="preload"
+        :autoplay="autoplay"
+      >
+        <!-- playsinline是蘋果系列產品的autoplay -->
         <source
           src="@/video/backward_sushi_1080.mp4"
           type="video/mp4"
