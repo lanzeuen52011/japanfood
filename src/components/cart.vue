@@ -30,7 +30,9 @@ export default {
     // 有沒有訂單放到購物車
     const hasBook = ref(false);
 
-    if (bookjson.length >= 1) {
+    if (bookjson == null) {
+      totalAmount = 0;
+    } else if (bookjson.length >= 1) {
       bookinfo = bookjson;
       hasBook.value = true;
 
