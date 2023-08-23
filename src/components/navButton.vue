@@ -60,8 +60,8 @@ export default {
       <!-- <i class="ri-share-line"></i> -->
     </button>
     <ul class="wrapperList">
-      <li class="item">
-        <button title="到最底部" @click="goBottom" class="link sc">
+      <li class="item" @click="goBottom">
+        <button title="到最底部" class="link sc">
           <!-- <i class="ri-snapchat-line"></i> -->
           <div class="goBottom">
             <svg class="arrow">
@@ -71,13 +71,8 @@ export default {
           </div>
         </button>
       </li>
-      <li class="item">
-        <button
-          title="到最上方"
-          @click="goTop"
-          class="link ig"
-          style="--d: 0.05s"
-        >
+      <li class="item" @click="goTop">
+        <button title="到最上方" class="link ig" style="--d: 0.05s">
           <!-- <i class="ri-instagram-line"></i> -->
           <div class="goTop">
             <svg class="arrow">
@@ -87,8 +82,8 @@ export default {
           </div>
         </button>
       </li>
-      <li class="item" style="--d: 0.1s">
-        <button title="導覽開關" @click="props.handleNavbar" class="link tw">
+      <li class="item" style="--d: 0.1s" @click="props.handleNavbar">
+        <button title="導覽開關" class="link tw">
           <!-- <i class="ri-twitter-line"></i> -->
           <img
             class="navbarButton"
