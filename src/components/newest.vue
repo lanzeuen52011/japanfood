@@ -46,12 +46,12 @@ export default {
   <section id="newest" class="newest__container container">
     <header class="head_container newest__head_container">
       <h2 class="newest__head head">私房新品</h2>
-      <button class="newest__text">
+      <a :class="['newest__text']" href="/menu">
         <svg class="newest__svg">
           <use xlink:href="../image/menu.svg#menu"></use>
         </svg>
         讓我看看還有哪些私房菜
-      </button>
+      </a>
     </header>
     <div>
       <article>

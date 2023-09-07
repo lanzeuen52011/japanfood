@@ -9,8 +9,6 @@ import Book from "@/components/book.vue";
 
 export default {
   components: {
-    // HelloWorld
-    // Slider,
     Main,
     BrandConcept,
     Newest,

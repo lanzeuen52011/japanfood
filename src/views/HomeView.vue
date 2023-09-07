@@ -8,7 +8,6 @@ import { reactive } from "vue";
 export default {
   name: "HomeView",
   components: {
-    // HelloWorld
     Nav,
     Footer,
   },
